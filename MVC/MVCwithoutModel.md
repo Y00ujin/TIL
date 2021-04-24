@@ -1,4 +1,4 @@
-## MVC
+## MVC without Model
 
 * ### iOS Architecture Patterns
 
