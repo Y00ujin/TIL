@@ -1,4 +1,3 @@
-```Swift
 //
 //  EZYLISTTableViewCell.swift
 //  EZYLIST
@@ -54,23 +53,20 @@ class EZYLISTTableViewCell: UITableViewCell {
     
     private func setup(){
         groupNameLabel = UILabel()
-        groupNameLabel.textColor = UIColor(red: 150/255, green: 141/255, blue: 255/255, alpha: 1)
-        groupNameLabel.font = UIFont.boldSystemFont(ofSize: 8)
+        groupNameLabel.font = UIFont(name: "Poppins-SemiBold", size: 8)
         
         titleLabel = UILabel()
-        titleLabel.textColor = UIColor(red: 150/255, green: 141/255, blue: 255/255, alpha: 1)
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        titleLabel.font = UIFont(name: "Poppins-SemiBold", size: 14)
         
         planTimeLabel = UILabel()
-        planTimeLabel.textColor = UIColor(red: 144/255, green: 144/255, blue: 144/255, alpha: 1)
-        planTimeLabel.font = UIFont.systemFont(ofSize: 8)
+        planTimeLabel.font = UIFont(name: "Poppins-Light", size: 8)
         
         EZYLISTCellRightDecorationView = UIView()
         EZYLISTCellRightDecorationView.backgroundColor = .white
         EZYLISTCellRightDecorationView.layer.cornerRadius = 10
         EZYLISTCellRightDecorationView.layer.masksToBounds = false
         EZYLISTCellRightDecorationView.layer.shadowOpacity = 0.1
-        EZYLISTCellRightDecorationView.layer.shadowRadius = 8
+        EZYLISTCellRightDecorationView.layer.shadowRadius = 7
         EZYLISTCellRightDecorationView.layer.shadowOffset = CGSize(width: 0, height: 5)
         EZYLISTCellRightDecorationView.layer.shadowColor = UIColor.black.cgColor
         
@@ -103,9 +99,9 @@ class EZYLISTTableViewCell: UITableViewCell {
     
     func EZYLISTCellRightDecorationViewSnapKit(){
         EZYLISTCellRightDecorationView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(8)
-            make.bottom.equalToSuperview().inset(7)
-            make.width.equalToSuperview().dividedBy(1.2)
+            make.top.equalToSuperview().offset(7)
+            make.bottom.equalToSuperview().inset(10)
+            make.width.equalToSuperview().dividedBy(1.15)
             make.centerX.equalToSuperview()
         }
     }
@@ -131,5 +127,3 @@ class EZYLISTTableViewCell: UITableViewCell {
         }
     }
 }
-
-```

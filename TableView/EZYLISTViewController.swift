@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-
 class EZYMainViewController: UIViewController {
     
+
     private lazy var mainView = EZYCollectionView.init(frame: self.view.frame)
     
     let myNavigationController = UINavigationController(rootViewController: SecondViewController())
@@ -22,8 +22,12 @@ class EZYMainViewController: UIViewController {
     let planTimeArray: [String] = ["12:00 - 13:00", "12:00 - 13:00", "12:00 - 13:00", "12:00 - 13:00", "12:00 - 13:00", "12:00 - 13:00", "12:00 - 13:00", "12:00 - 13:00"]
     var labelArr = ["나의 할 일","우리의 할 일","심부름","문의하기"]
     
-    var EZYPlanBackgroundColor: [UIColor]! = [UIColor(red: 150/255, green: 141/255, blue: 255/255, alpha: 1), UIColor(red: 255/255, green: 166/255, blue: 128/255, alpha: 1), UIColor(red: 255/255, green: 209/255, blue: 141/255, alpha: 1), UIColor(red: 184/255, green: 128/255, blue: 255/255, alpha: 1),UIColor(red: 150/255, green: 141/255, blue: 255/255, alpha: 1), UIColor(red: 255/255, green: 166/255, blue: 128/255, alpha: 1), UIColor(red: 255/255, green: 209/255, blue: 141/255, alpha: 1), UIColor(red: 184/255, green: 128/255, blue: 255/255, alpha: 1)]
     var purpleColor: UIColor! = UIColor(red: 150/255, green: 141/255, blue: 255/255, alpha: 1)
+    var orangeColor: UIColor! = UIColor(red: 255/255, green: 166/255, blue: 128/255, alpha: 1)
+    var yellowColor: UIColor! = UIColor(red: 255/255, green: 209/255, blue: 141/255, alpha: 1)
+    var greenColor: UIColor! = UIColor(red: 184/255, green: 128/255, blue: 255/255, alpha: 1)
+    
+    lazy var EZYPlanBackgroundColor: [UIColor] = [purpleColor, orangeColor, yellowColor, greenColor, purpleColor, orangeColor, yellowColor, greenColor]
     
     var EZYLISTTitleLabel: UILabel!
     var EZYWelcomTitleStartLabel: UILabel!
@@ -31,11 +35,17 @@ class EZYMainViewController: UIViewController {
     var EZYWelcomTitleEndLabel: UILabel!
     var EZYLISTHeaderView: UIView!
     var EZYPlanAddButton: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view = mainView
+        
+        navigationController?.isNavigationBarHidden = true
         
         setupCollectionView()
         setupEZYLISTHeaderView()
@@ -69,7 +79,7 @@ class EZYMainViewController: UIViewController {
         EZYWelcomTitleMiddleLabelSnapKit()
         EZYWelcomTitleEndSnapKit()
     }
-
+    
     private func setupCollectionView() {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
@@ -134,7 +144,6 @@ class EZYMainViewController: UIViewController {
             make.left.equalToSuperview().inset(29)
         }
     }
-
     
     func EZYLISTTitleLabelSnapKit(){
         EZYLISTTitleLabel.snp.makeConstraints { make in
@@ -219,6 +228,10 @@ extension EZYMainViewController: UITableViewDataSource{
         cell.titleLabel.textColor = EZYPlanBackgroundColor[indexPath.row]
         cell.groupNameLabel.textColor = EZYPlanBackgroundColor[indexPath.row]
         
+        print("tableView - cellForRowAt")
+        print(indexPath.row)
+        print(cell.titleLabel!.text ?? "")
+        
         cell.backgroundColor = .white
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
                 
@@ -234,11 +247,17 @@ extension EZYMainViewController: UITableViewDataSource{
 extension EZYMainViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EZYLISTTableViewCell", for: indexPath) as! EZYLISTTableViewCell
-        self.navigationController?.pushViewController(myNavigationController, animated: true)
+        print("tableView - didSelectRowAt")
+        var cell = tableView.cellForRow(at: indexPath)
         print(indexPath.row)
-        print(cell.titleLabel!.text ?? "")
+        print(titleArray[indexPath.row])
         
+        let pushVC = NextViewController()
+        
+        pushVC.titleLabel.text = titleArray[indexPath.row]
+        
+        self.navigationController?.pushViewController(pushVC, animated: true)
     }
+
     
 }
