@@ -1,7 +1,4 @@
-# **UITableView**
-
-- #### **EZYLIST 구현해보기 with Code** 👩🏻‍💻
-
+## **UITableView**
 <br>
 
 ##### **🛠 TableView 를 위한 Protocol**
@@ -129,8 +126,3 @@ extension ListViewController: UITableViewDelegate {
 
 
 <br>
-
-##### **🛠 개발 시작**
-
-***
-
