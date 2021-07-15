@@ -18,3 +18,10 @@
 
 #### Swift
 * ##### [Filter](./Swift/Filter/Filter.md)
+* ##### [Map](./Swift/Map/Map.md)
+* ##### [Split](./Swift/Split/Split.md)
+* ##### [Sorted](./Swift/Sorted/Sorted.md)
+* ##### [Zip](./Swift/Zip/Zip.md)
+* ##### [LazyVar](./Swift/LazyVar/LazyVar.md)
+* ##### [Components](./Swift/Components/Components.md)
+
