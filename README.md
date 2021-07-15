@@ -17,4 +17,4 @@
 * ##### [SnapKit](./SnapKit/SnapKit.md)
 
 #### Swift
-* ##### [SnapKit](./Swift/Sorted.md)
+* ##### [Filter](./Swift/Filter.md)
