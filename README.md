@@ -2,19 +2,19 @@
 
 ### **iOS**
 
-* ##### [TableView](./MVC/MVCwithModel.md)
-* ##### [CollectionView](./MVC/MVCwithModel.md)
-* ##### [ModalHalfScreen](./MVC/MVCwithModel.md)
-* ##### [UserNotification](./MVC/MVCwithModel.md)
+* ##### [TableView](./iOS/MVC/MVCwithModel.md)
+* ##### [CollectionView](./iOS/MVC/MVCwithModel.md)
+* ##### [ModalHalfScreen](./iOS/MVC/MVCwithModel.md)
+* ##### [UserNotification](./iOS/MVC/MVCwithModel.md)
 * ##### [NavigationViewController](./MVC/MVCwithModel.md)
 
 
 #### Architecture
-* ##### [MVC](./MVC/MVCwithModel.md)
+* ##### [MVC](./iOS/MVC/MVCwithModel.md)
 
 #### Framework
 
-* ##### [SnapKit](./SnapKit/SnapKit.md)
+* ##### [SnapKit](./iOS/SnapKit/SnapKit.md)
 
 #### Swift
 * ##### [Filter](./Swift/Filter/Filter.md)
