@@ -24,4 +24,4 @@
 * ##### [Zip](./Swift/Zip/Zip.md)
 * ##### [LazyVar](./Swift/LazyVar/LazyVar.md)
 * ##### [Components](./Swift/Components/Components.md)
-
+* ##### [ForEach](./Swift/ForEach/ForEach.md)
