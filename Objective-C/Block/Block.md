@@ -20,7 +20,6 @@
 
 - ##### Block은 값을 캡쳐할 때 Value Type일 경우 값을 복사하여 Capture하고, Reference Type일 경우 Reference Captrue를 한다
 
-
 <br>
 -
 
