@@ -25,3 +25,4 @@
 * ##### [LazyVar](./Swift/LazyVar/LazyVar.md)
 * ##### [Components](./Swift/Components/Components.md)
 * ##### [ForEach](./Swift/ForEach/ForEach.md)
+* ##### [Stride](./Swift/Stride/Stride.md)
