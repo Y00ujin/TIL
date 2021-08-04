@@ -1,29 +1,70 @@
-# **Face Id**
+# **Face ID**
 
-- #### ```Face Id``` 구현해보기 with Youjin 👩🏻‍💻
+- #### ```Face ID``` 구현해보기 with Youjin 👩🏻‍💻
 
-### Stride, 뭐야?
+### Face ID, 뭐야?
 
-> #### ```지정된 양만큼 단계적으로 시작 값에서 끝 값까지의 시퀀스를 반환합니다.```
+> #### ```생체 인증으로 자체 인증 체계를 보완하여 사용자가 앱의 민감한 부분에 쉽게 액세스할 수 있도록 합니다.```
 
-### 그래서 Stride가 뭐라고..?
-- ###### 시작 값에서 끝 값까지 지정된 양만큼 연산된 시퀀스를 반환하는 것!
+### 바로 사용해보자! Face ID!
+##### 1. Face ID를 사용하기 위하여 Framework를 추가해주자
+- ###### 1-1. 파일 네비게이터에서 제일 상위 폴더인 프로젝트 폴더를 클릭한다.
+- ###### 1-2. TARGET에서 General -> Frameworks, Libraries, and Embedded Content에 LocalAuthentication.framework를 추가해준다.
 
-### Stride의 매개변수를 살펴보자
+<br>
 
-- ##### start(from) : 시퀀스에 사용할 시작 값입니다. 시퀀스에 값이 포함된 경우 첫 번째 값은 start입니다. ```= 시작 값```
+##### 2. Face ID를 사용할 ViewController에서 import 해주자
+- ###### 2-1. ```import LocalAuthentication```
 
-- ##### end(through) : 시퀀스를 제한하는 끝 값입니다. end는 시퀀스에 포함되지 않습니다.```= 끝 값```
+<br>
 
-- ##### stride(by) : 각 반복에서 단계별로 수행할 양입니다. 양수는 stride위쪽으로 반복됩니다. 음수는 stride아래쪽으로 반복됩니다.```= 반복될 연산```
+##### 3. 인증 정책 및 액세스 제어를 평가하기 위한 메커니즘, LAContext를 추가해주자
 
-### Stride, 사용해보자!
-- ###### 예제를 보면 쉽게 이해할 수 있다 🐻‍❄️
-##### 시작값(from) 1부터 시작하여 끝 값(through) 10까지 연산 값(by) 2씩 더하여 시퀀스를 반환하고있다.
+- ###### 3-1. ```let authContext = LAContext()```
+
+##### LAContext가 뭐야?
+
+###### Apple 왈 : ```인증 컨텍스트를 사용하여 Touch ID 또는 Face ID와 같은 생체 인식을 사용하거나 장치 암호를 제공하여 사용자의 ID를 평가합니다.```
+###### 그냥 TouchID, FaceID의 모든 기능(인증, 평가)들을 담아놓은 것이라고 생각하면 될 거 같다.
+
+
+
+<br>
+
+### 준비는 끝났다. 이제 인증 코드를 짜보자!
+###### 난 버튼을 누를 시 인증이 되도록 하기위해 <br> ``` @objc func withdrawalButtonClicked(sender:UIButton){}``` 이 함수 안에 작성하였다.
+
+##### 4. NSError를 참조하는 error 변수를 선언해주자
+- ###### 4-1. ```var error: NSError?``` 
+
+<br>
+
+##### 5. Face ID를 지원하는 기기인지 판별하자
+- ###### 5-1. ```if authContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {}```
+
+
+<br>
+
+##### 6. 인증 여부를 판별해보자
+- ###### 6-1. 마지막으로 인증 여부를 판단하고 성공하면 모달을 띄우는 형식으로 진행하였다.
 ```swift
-for i in stride(from: 1, through: 10, by: 2) {
-    print(i) // 1,3, 5, 7, 9
-}
+authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: description) { success, error in
+                if success {
+                    print("인증성공")
+                    
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                        self.withdrawalModalView.isHidden = false
+                    }
+                    
+                }else{
+                    print("인증실패")
+                    print(error?.localizedDescription)
+                }
+            }
 ```
 
-### END!
+##### 7. 마지막으로 Info.plist에 NSFaceIDUsageDescription항목을 추가한다.
+##### 위처럼 추가하면 사용자의 동의를 구하는 모달을 띄우는데 Key 값에는 그때 뜰 안내 문구를 적어주면 된다.
+- ###### 7-1. ```NSFaceIDUsageDescription```
+
+
