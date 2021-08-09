@@ -18,6 +18,8 @@
 * ##### [SnapKit](./iOS/SnapKit/SnapKit.md)
 
 #### Swift
+
+* ##### [Sqrt](./Swift/Sqrt/Sqrt.md)
 * ##### [Filter](./Swift/Filter/Filter.md)
 * ##### [Map](./Swift/Map/Map.md)
 * ##### [Split](./Swift/Split/Split.md)
