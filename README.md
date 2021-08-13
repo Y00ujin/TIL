@@ -19,6 +19,7 @@
 
 #### Swift
 
+
 * ##### [Set](./Swift/Set/Set.md)
 * ##### [Sqrt](./Swift/Sqrt/Sqrt.md)
 * ##### [Filter](./Swift/Filter/Filter.md)
@@ -30,3 +31,4 @@
 * ##### [Components](./Swift/Components/Components.md)
 * ##### [ForEach](./Swift/ForEach/ForEach.md)
 * ##### [Stride](./Swift/Stride/Stride.md)
+* ##### [replacingOccurrences(of:with:)](./Swift/replacingOccurrences(of:with:)/replacingOccurrences(of:with:).md)
