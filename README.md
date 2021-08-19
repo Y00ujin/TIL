@@ -21,6 +21,7 @@
 
 
 * ##### [Set](./Swift/Set/Set.md)
+* ##### [Closure](./Swift/Closure/Closure.md)
 * ##### [Sqrt](./Swift/Sqrt/Sqrt.md)
 * ##### [Filter](./Swift/Filter/Filter.md)
 * ##### [Map](./Swift/Map/Map.md)
