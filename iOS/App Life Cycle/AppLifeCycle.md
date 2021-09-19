@@ -32,11 +32,17 @@
 ### Backgound - suspended
 > ##### Suspended는 app을 다시 실행했을 때 최근 작업을 빠르게 로드하기 위해 메모리에 관련 데이터만 저장되어있는 상태. app이 background 상태에 진입했을 때 다른 작업을 하지 않으면 Suspended 상태로 진입하게 됩니다.(보통 2~3초 이내) Suspended 상태의 app들은 iOS의 메모리가 부족해지면 가장 먼저 메모리에서 해제됨. 따라서 app을 종료시킨 적이 없더라도 app을 다시 실행하려고 하면 처음부터 다시 실행됩니다.
 
-### 상황에 따른 앱의 상태변화를 알아보자.
-
+### 앱의 상태에 따라 실행되는 delegate 함수를 알아보자
+- ##### ```application(_:didFinishLaunching:)``` - 앱이 처음 시작될 때 실행
+- ##### ```applicationWillResignActive:``` - 앱이 active 에서 inactive로 이동될 때 실행 
+- ##### ```applicationDidEnterBackground:``` - 앱이 background 상태일 때 실행 
+- ##### ```applicationWillEnterForeground:``` - 앱이 background에서foreground로 이동 될때 실행 (아직 foreground에서 실행중이진 않음)
+- ##### ```applicationDidBecomeActive:``` - 앱이 active상태가 되어 실행 중일 때
+- ##### ```applicationWillTerminate:``` - 앱이 종료될 때 실행
 
 
 ##### 참고자료
+- ###### https://medium.com/ios-development-with-swift/%EC%95%B1-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0-app-lifecycle-vs-%EB%B7%B0-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0-view-lifecycle-in-ios-336ae00d1855
 - ###### https://velog.io/@minni/iOS-Application-Life-Cycle
 - ###### https://velog.io/@rnfxl92/%EC%95%B1-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0-Application-Life-Cycle
 - ###### https://developer.apple.com/documentation/uikit/app_and_environment/managing_your_app_s_life_cycle
