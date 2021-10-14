@@ -2,7 +2,7 @@
 
 ### **Interview**
 
-* ##### [Storyboard vs Code](.Interview/StoryboardvsCode/StoryboardvsCode.md)
+* ##### [StoryboardvsCode](.Interview/StoryboardvsCode/StoryboardvsCode.md)
 
 ### **iOS**
 
