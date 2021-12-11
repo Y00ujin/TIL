@@ -24,3 +24,28 @@ Class 함수형{
 
 let youjin = 함수형() // 인스턴스 생성
 ```
+
+<br>
+
+### Class의 초기화 방법!
+```Swift
+class Name {
+    var name : String
+    var age : Int
+    
+    init(name:String, age:Int) { //초기화!
+        self.name = name
+        self.age = age
+    }
+    
+    func my_name() {
+        print("my name is \(name) and \(age) year's old")
+    }
+}
+
+let name1 : Name = Name(name: "song", age: 24)
+let name2 : Name = Name(name: "kim", age: 25)
+
+name1.my_name()
+name2.my_name()
+```
