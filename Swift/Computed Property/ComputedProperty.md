@@ -49,6 +49,72 @@ class Person {
 
 <br>
 
+### Computed Property을 왜 사용할까?
+- ##### 1. 프로퍼티에 값이 할당 될 때 적절한 값인지 검증하기 위해
+###### _members는 회사의 직원 수를 저장하는 저장 프로퍼티입니다.
+###### 직원 수가 음수가 될 수는 없으니 members 값을 바꿀 때는 검증 할 필요가 있습니다.
+```Swift
+class Company {
+   var _members:Int = 5
+   var members:Int {
+      get {
+         return _members
+      }
+      set (newVal) {
+          // _members
+         if (newVal < 1){
+            print(“직원수는 한명보다 작을 수 없습니다.”)
+         }else{
+            _members = newVal
+         }
+      }
+   }
+}
+```
+
+- ##### 2. 다른 프로퍼티값에 의존적인 프로퍼티를 관리 할 때
+###### 회식비를 의미하는 teamDinnerCost 프로퍼티가 추가 됐습니다. 회식비는 직원 수에 비례하기 때문에 _members 프로퍼티에 의존적 입니다.
+###### teamDinnerCost 프로퍼티에 get을 사용하면 직원수에 비례하여 계산된 회식비를 반환하도록 할 수 있습니다.
+```Swift
+class Company {
+   var _members:Int = 5
+   var members:Int {
+      get {
+         return _members
+      }
+      set (newVal) {
+         if (newVal < 1){
+            print(“직원수는 한명보다 작을 수 없습니다.”)
+         }else{
+            _members = newVal
+         }
+      }
+   }
+   var teamDinnerCost:Int { // 추가된 부분
+      get {
+         return _members * 100000
+      }
+   }
+}
+```
+
+- ##### 3. 프로퍼티를 private하게 사용하기 위해
+###### 이 때는 직접적으로 get, set을 쓰지는 않습니다.
+```Swift
+// 이 경우 myProperty는 internal getter와 private setter를 얻게됩니다.
+// 즉 myProperty가 선언된 파일내에서만 값을 수정 할 수 있고 외부에서는 값을 수정 할 수 없습니다.
+// 반면 myProperty의 값을 얻는것은 모듈내에서는 어디서든 할 수 있습니다.
+private(set) var myProperty: Int = 10
+```
+
+###### internal getter가 아닌 public getter로 만드는 방법도 있습니다.
+```Swift
+// 위와 같이 선언 할 경우 myProperty의 값은 어디서든 접근 할 수 있습니다. 다만 이렇게 선언할 경우 class를 public 클래스로 선언 해주어야 합니다.
+public private(set) var myProperty: Int = 10
+```
+
+<br>
+
 ### Computed Property 사용하기
 ```Swift
 let sodeul: Person = .init()
@@ -101,3 +167,8 @@ struct Cuboid {
     }
 }
 ```
+
+<br>
+
+#### 참고자료
+- ###### https://medium.com/ios-development-with-swift/%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0-get-set-didset-willset-in-ios-a8f2d4da5514
