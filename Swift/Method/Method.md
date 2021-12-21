@@ -159,9 +159,7 @@ Someclass.otherTypeMethod()
 ```Swift
 class youjin: SomeClass{
     // SomeClass에서 someTypeMethod를 class 키워드를 사용하여 선언했기 때문에 SomeClass를 상속받는 자식클래스 즉 youjin 클래스에서 someTypeMethod를 재정의 할 수 있다.
-    override static func someTypeMethod(){
-
-    }
+    override static func someTypeMethod(){ }
 }
 ```
 

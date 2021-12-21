@@ -40,6 +40,7 @@ var Value : Int = someValue // 옵셔널을 담을 수 없기때문에 오류 �
 ```
 
 - ##### !
+###### 강제 언래핑하여 상자에서 값을 부셔 꺼내온다. 없으면 nil을 반환! 있으면 값을 반환!
 ```Swift
 var someValue :Int? = 30
 var Value : Int = someValue! // 오류가 안남
