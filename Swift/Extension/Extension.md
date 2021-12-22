@@ -55,11 +55,24 @@ print(2.isEven) // true
 ```
 
 - ##### 2. 메서드 추가
-###### 인스턴스 메서드, 타입 메서드 모두 추가 가능하다.
+###### 인스턴스 메서드, 타입 메서드, mutating 메서드 모두 추가 가능하다!
 ```Swift
 extension Int{
+    var defaultAddNum = 2
+    // 인스턴스 메서드 추가
     func multiply(by n: Int) -> Int{
         return self * n
+    }
+
+    // 타입 메서드 추가
+    static func add(num n: Int) -> Int{
+        return self + n
+    }
+
+    // mutating 메서드
+    mutating func sub(num n: Int) -> Int{
+        defaultAddNum = 4
+        return self - n
     }
 }
 
@@ -147,14 +160,7 @@ extension Int{ // Int라는 구조체에 열거형을 추가하여 중첩타입 
 }
 ```
 
-- ##### 6. 변경 가능한 인스턴스 메소드 추가
-// Method TIL 작성 후 내용 ㅇ추가
-
-
 #### 참고자료
 - ###### https://blog.yagom.net/529/
 - ###### https://gwangyonglee.tistory.com/48
 - ###### https://babbab2.tistory.com/124
-- ###### 
-- ######
-- ######
