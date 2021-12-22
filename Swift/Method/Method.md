@@ -10,6 +10,36 @@
 
 <br>
 
+### 메소드를 위한 지역 및 외부 인자 이름 (Local and External Parameter Names for Methods)
+- ##### 함수 인자는 함수 내부에서 사용할 지역 이름(`parameter name`)과 함수를 호출할 때 사용할 외부 이름(`argument label`)을 가질 수 있다.
+```Swift
+// parameter name : operand1, opeand2
+// argument label: first, second
+func add(first operand1: Int, second operand2: Int) -> Int{
+    return operand1 + operand2
+}
+
+print(add(first: 1, second: 2)) // 3
+```
+
+<br>
+
+### 외부 이름 숨기기(Modifying External Parameter Name behavior for Methods)
+- ###### 외부 이름을 없애고싶으면 `_`를 사용하자
+```Swift
+class Counter {
+    var allPrice: Int = 0
+    func incrementBy(count: Int, _ price: Int) {
+        allPrice = count * price
+    }
+}
+
+let myCounter = Counter()
+myCounter.incrementBy(count: 2, 2000) // 외부 이름없이 인자를 넘길 수 있다.
+```
+
+<br>
+
 ### Instance Methods
 - ##### 인스턴스 메서드는 객체 타입이 만들어내는 인스턴스에 소속된 함수
 - ##### 객체의 인스턴스에 대한 기능적 측면을 제공한다.
@@ -170,4 +200,5 @@ class youjin: SomeClass{
 - ###### https://zeddios.tistory.com/258
 - ###### https://hodev.tistory.com/111
 - ###### https://jeonyeohun.tistory.com/72
-
+- ###### http://minsone.github.io/mac/ios/swift-methods-summary
+- ###### https://sujinnaljin.medium.com/objective-c-%ED%95%A8%EC%88%98%EC%9D%98-%EC%B2%AB%EB%B2%88%EC%A7%B8-%EC%9D%B8%EC%9E%90-%EC%9D%B4%EB%A6%84-%EC%A7%80%EC%A0%95%ED%95%98%EA%B8%B0-863aae7a3533
