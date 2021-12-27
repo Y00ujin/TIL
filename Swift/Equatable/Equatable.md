@@ -46,6 +46,7 @@ class A : Equatable {
 }
 ```
 ###### Equatable을 채택하면 오류가 뜬다..! 왜냐면 Equatable 프로토콜을 준수하고 있지 않기 때문이다
+###### Equatable 사용시에는 == 을 무조건 정의 해주어야 한다.
 ```Swift
 class A: Equatable{
     var aNum: Int
