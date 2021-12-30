@@ -195,7 +195,31 @@ class youjin: SomeClass{
 
 <br>
 
+### Method와 in-to, in-out 파라미터
+- ##### 함수의 파라미터는 기본적으로 상수(Constant)이다.
+###### 따라서 아래와 같이 함수 내에서 파라미터를 변경하려고 시도하면 컴파일 에러가 발생한다. 상수를 변경하려고 시도했기 때문이다.
+```Swift
+funt add(num: Int){
+    num += 1
+    print(num)
+}
+```
+###### 함수의 파라미터를 함수 내부에서 변경하고 함수가 종료된 후에도 변경한 값이 지속되도록 하려면 변수의 주소값을 넘겨 직접 접근할 수 있도록 도와주는 inout 키워드를 사용하면 된다.
+
+###### inout 키워드를 사용하여 파라미터로 들어온 값을 1증가시키고 출력하는 코드이다. 
+###### 파라미터와 데이터 타입 사이에 inout키워드를 작성하고, 함수를 호출할 때 변수 명 앞에 앰퍼샌드(&) 기호를 붙여 사용한다.
+```Swift
+var number = 10
+ 
+func addOne(value: inout Int){
+    value += 1
+    print(value)
+}
+ 
+addOne(value: &number)
+```
 #### 참고자료
+- ###### https://2018-start.tistory.com/92
 - ###### http://minsone.github.io/mac/ios/swift-methods-summary
 - ###### https://zeddios.tistory.com/258
 - ###### https://hodev.tistory.com/111
