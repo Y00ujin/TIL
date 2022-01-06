@@ -14,7 +14,7 @@
 struct MyType: Printable{
     var value: Int = 0
 
-    // String ㅍ로퍼티의 getter가 Printable의 핵심이자 전부라고 봐도 된다.
+    // String 프로퍼티의 getter가 Printable의 핵심이자 전부라고 봐도 된다.
     var description: String{
         return "MyType.value = \(value)"
     }
