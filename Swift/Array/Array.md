@@ -480,6 +480,35 @@ print(numbers.last) // nil
 <br>
 <br>
 
+### Array 관련 메소드와 속성 정리
+- ##### 1. 기존 배열의 값을 변경하는 메소드
+###### 삽입 : append(_:), append(contentsOf:), insert(_:at:), insert(contentsOf:at:)
+###### 삭제 : remove(at:), removeFirst(), removeLast(), popLast(), removeAll(), removeSubrange(_:)
+###### 재정렬 : sort(), reverse()
+
+<br>
+
+- ##### 2. 새로운 배열을 리턴하는 메소드
+
+###### 삽입된 배열 : + 연산자
+###### 삭제된 배열 : dropFirst(), dropLast()
+###### 재정렬된 배열 : sorted(), reserved()
+
+<br>
+
+- ##### 3. 특정 값을 찾는 메소드 및 속성
+
+###### 첫번째, 마지막 값 : first, last
+###### 특정 값의 인덱스 : startIndex, endIndex, firstIndex(of:), lastIndex(of:)
+###### 최소, 최대 값 : min(), max()
+
+- ##### 4. 배열의 속성
+###### 크기, 용량 : count, capacity
+###### 빈 배열 여부 : isEmpty
+
+<br>
+<br>
+
 #### 참고자료
 - ###### https://tngusmiso.tistory.com/42
 - ###### https://tngusmiso.tistory.com/44
