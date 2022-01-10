@@ -15,6 +15,31 @@ array.forEach { // array의 요소 갯수(5)만큼 반복
 }
 ```
 
+<br>
+
+### forEach + Dictionary
+```Swift
+let dict: [String: String] = ["A" : "Apple", "B" : "Banana", "C" : "Cherry"]
+ 
+dict.forEach {
+    print("(\($0.key) : \($0.value))")  // (B : Banana) (C : Cherry) (A : Apple)
+}
+ 
+dict.forEach { (key, value) in
+    print("(\(key) : \(value))")        // (C : Cherry) (A : Apple) (B : Banana) 
+}
+ 
+dict.keys.forEach {
+    print($0)       // B C A
+}
+ 
+dict.values.sorted().forEach {
+    print($0)       // Apple Banana Cherry
+}
+```
+
+<br>
+
 ### forEach + (return, continue, break) = ?
 #### 1. forEach + return
 ```Swift
