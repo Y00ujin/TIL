@@ -17,7 +17,7 @@ public struct CGRect{
 }
 ```
 
-<Br>
+<br>
 <br>
 
 ### CGRect는 언제 사용할까
