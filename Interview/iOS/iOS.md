@@ -53,7 +53,6 @@ IPA란?
 - ### 앱이 시작할 때 main.c 에 있는 UIApplicationMain 함수에 의해서 생성되는 객체는 무엇인가?
 ##### UIApplication 싱글턴 객체가 생성됩니다.
 
-- ### 싱글턴이란 무엇인가
 
 @Main에 대해서 설명하시오.
 앱이 foreground에 있을 때와 background에 있을 때 어떤 제약사항이 있나요?
