@@ -51,10 +51,26 @@ IPA란?
 <br>
 
 - ### 앱이 시작할 때 main.c 에 있는 UIApplicationMain 함수에 의해서 생성되는 객체는 무엇인가?
-##### UIApplication 싱글턴 객체가 생성됩니다.
+##### UIApplicationMain 함수는 싱글톤 UIApplication 객체를 생성합니다. 그 후 공유 클래스 메서드를 호출하여 객체에 접근합니다.
 
 
-@Main에 대해서 설명하시오.
+<br>
+<br>
+
+- ### @Main에 대해서 설명하시오.
+#####
+
+<br>
+<br>
+
+- ### 
+
+<br>
+<br>
+
+- ### 
+
+
 앱이 foreground에 있을 때와 background에 있을 때 어떤 제약사항이 있나요?
 상태 변화에 따라 다른 동작을 처리하기 위한 앱델리게이트 메서드들을 설명하시오.
 앱이 In-Active 상태가 되는 시나리오를 설명하시오.
