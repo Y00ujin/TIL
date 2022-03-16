@@ -60,18 +60,30 @@
 <br>
 <br>
 
-- ### 
+- ### 앱이 foreground에 있을 때와 background에 있을 때 어떤 제약사항이 있나요?
+##### Foreground mode는 메모리 및 기타 시스템 리소스에 높은 우선순위를 가지며 시스템은 이러한 리소스를 사용할 수 있도록 필요에 따라 background 앱을 종료합니다. background mode는 가능한 적은 메모리 공간을 사용해야합니다.
 
 <br>
 <br>
 
-- ### 
+- ### 상태 변화에 따라 다른 동작을 처리하기 위한 앱델리게이트 메서드들을 설명하시오.
+##### 앱이 처음 시작될 때 application(_:didFinishLaunching:) 메서드가 실행됩니다. 앱이 active에서 inactive로 이동될 때 applicationWillResignActive: 메서드가 실행되며
 
+<br>
+<br>
 
-앱이 foreground에 있을 때와 background에 있을 때 어떤 제약사항이 있나요?
-상태 변화에 따라 다른 동작을 처리하기 위한 앱델리게이트 메서드들을 설명하시오.
-앱이 In-Active 상태가 되는 시나리오를 설명하시오.
-scene delegate에 대해 설명하시오.
+- ### 앱이 In-Active 상태가 되는 시나리오를 설명하시오.
+##### 특정 알림창이 화면을 덮어서 앱이 실질적으로 event를 받지 못할때 In-Active 상태가 됩니다.
+
+<br>
+<br>
+
+- ### scene delegate에 대해 설명하시오.
+##### iOS 13부터 window의 개념이 scene으로 대체되고 하나의 앱에서 여러개의 scene을 가질 수 있게 되면서 SceneDelegate가 등장하였다. SceneDelegate는 기존의 AppDelegate 역할이었던 UILifeCycle에 대한 부분을 SceneDelegate가 하게 되었으며, 화면에 무엇(scene/window)을 보여줄지 관리하는 역할을 합니다.
+
+<br>
+<br>
+
 UIApplication 객체의 컨트롤러 역할은 어디에 구현해야 하는가?
 App의 Not running, Inactive, Active, Background, Suspended에 대해 설명하시오.
 NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오.

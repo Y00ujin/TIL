@@ -16,13 +16,13 @@
 ### Not Running
 > ##### Not Running은 앱이 아직 실행되지 않았거나, 완전히 종료되어 동작하지 않는 상태.
 
-### Foreground - Inactive
+### (Foreground) - Inactive
 > ##### Inactive는 app이 실행중이지만 사용자로부터 event를 받을 수 없는 상태.
 > ##### ex) multitasking window로 진입, 앱 스위쳐 사용, 전화, 알림 등에 의해 사용자가 앱을 사용할 수 없게 되는 경우
 > ##### 사용자가 앱을 full Controll 할 수 없는 상태
 > ##### 외부적인 요인(interrupt)에 의해 InActive 상태가 될 수 있다.
 
-### Foreground - Active
+### (Foreground) - Active
 > ##### Active는 app이 실제 실행중이고 사용자 event를 받아서 상호작용할 수 있는 상태. (바로 Active가 되지 않고 Inactive 상태를 거쳐 Active상태가 된다.)
 
 ### Backgound - Running
