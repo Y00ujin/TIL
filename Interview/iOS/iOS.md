@@ -84,29 +84,69 @@
 <br>
 <br>
 
-UIApplication 객체의 컨트롤러 역할은 어디에 구현해야 하는가?
-App의 Not running, Inactive, Active, Background, Suspended에 대해 설명하시오.
+- ### App의 Not running, Inactive, Active, Background, Suspended에 대해 설명하시오.
+##### Not running은 앱이 아예 실행되지 않았거나 시스템에 의해 종료되었을 때의 상황입니다. Inactive는 앱이 foreground 상태이기는 하나 이벤트를 받지 못한 상태입니다. Active는 앱이 foreground에서 실행 중이며 이벤트를 받았을 때의 상황입니다. background는 앱이 background에 있으며 코드를 실행하고 있는 상태입니다. suspended는 앱이 background에 있으며 앱이 메모리에 남아있긴 하나 코드를 실행하고있지 않은 상태입니다.
+
+
+<br>
+<br>
+
+- ### iOS 앱을 만들고, User Interface를 구성하는 데 필수적인 프레임워크 이름은 무엇인가?
+##### UIKit 이다.
+
+<br>
+<br>
+
+- ### ViewController의 생명주기를 설명하시오.
+##### 먼저 loadView()를 통해 화면에 띄워줄 view를 생성하거나 불러와 메모리에 로드합니다. 뷰컨트롤러가 메모리에 로드되고 난 후 viewDidLoad가 호출되고 뷰가 로드 된 후 뷰가 나타기 직전 viewWillAppear가 호출됩니다. 뷰가 화면에 나타난 직후에 viewDidAppear가 호출되고, 뷰가 사라지기 직전 viewWillDisappear가 호출됩니다. 뷰가 사라지면 viewDidDisappear가 호출됩니다.
+
+<br>
+<br>
+
+- ### TableView와 CollectionView의 차이점을 설명하시오.
+##### TableView는 리스트 형식으로 데이터를 표현하고 수직 스크롤만 가능하고 CollectionView는 그리드와 스택, 타일 등 다양한 방식으로 데이터 표현이 가능하고 수직/수평 스크롤이 모두 가능하다.
+
+<br>
+<br>
+
+- ### prepareForReuse에 대해서 설명하시오.
+##### 셀은 재사용 되었지만, 셀 안에 들어가는 데이터의 조건은 각각 다를 수 있다. 따라서 재사용 셀을 사용할 때에는 반드시 초기화하는 과정이 필요한데, 그때 사용하는 함수가 prepareForReuse이다.
+
+<br>
+<br>
+
+- ### TableView를 동작 방식과 화면에 Cell을 출력하기 위해 최소한 구현해야 하는 DataSource 메서드를 설명하시오.
+
+<br>
+<br>
+
+- ### UIWindow 객체의 역할은 무엇인가?
+
+<br>
+<br>
+
+- ### 모든 View Controller 객체의 상위 클래스는 무엇이고 그 역할은 무엇인가?
+
+<br>
+<br>
+
+- ### UIView 에서 Layer 객체는 무엇이고 어떤 역할을 담당하는지 설명하시오.
+
+
+
+
 NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오.
 GCD API 동작 방식과 필요성에 대해 설명하시오.
 Global DispatchQueue 의 Qos 에는 어떤 종류가 있는지, 각각 어떤 의미인지 설명하시오.
-iOS 앱을 만들고, User Interface를 구성하는 데 필수적인 프레임워크 이름은 무엇인가?
 Foundation Kit은 무엇이고 포함되어 있는 클래스들은 어떤 것이 있는지 설명하시오.
 Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오.
 NotificationCenter 동작 방식과 활용 방안에 대해 설명하시오.
 UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?
 App Bundle의 구조와 역할에 대해 설명하시오.
-모든 View Controller 객체의 상위 클래스는 무엇이고 그 역할은 무엇인가?
 자신만의 Custom View를 만들려면 어떻게 해야하는지 설명하시오.
-View 객체에 대해 설명하시오.
-UIView 에서 Layer 객체는 무엇이고 어떤 역할을 담당하는지 설명하시오.
-UIWindow 객체의 역할은 무엇인가?
 UINavigationController 의 역할이 무엇인지 설명하시오.
-TableView를 동작 방식과 화면에 Cell을 출력하기 위해 최소한 구현해야 하는 DataSource 메서드를 설명하시오.
 하나의 View Controller 코드에서 여러 TableView Controller 역할을 해야 할 경우 어떻게 구분해서 구현해야 하는지 설명하시오.
 setNeedsLayout와 setNeedsDisplay의 차이에 대해 설명하시오.
 NSCache와 딕셔너리로 캐시를 구성했을때의 차이를 설명하시오.
 URLSession에 대해서 설명하시오.
-prepareForReuse에 대해서 설명하시오.
 다크모드를 지원하는 방법에 대해 설명하시오.
-ViewController의 생명주기를 설명하시오.
-TableView와 CollectionView의 차이점을 설명하시오.
