@@ -87,12 +87,11 @@
 - ### App의 Not running, Inactive, Active, Background, Suspended에 대해 설명하시오.
 ##### Not running은 앱이 아예 실행되지 않았거나 시스템에 의해 종료되었을 때의 상황입니다. Inactive는 앱이 foreground 상태이기는 하나 이벤트를 받지 못한 상태입니다. Active는 앱이 foreground에서 실행 중이며 이벤트를 받았을 때의 상황입니다. background는 앱이 background에 있으며 코드를 실행하고 있는 상태입니다. suspended는 앱이 background에 있으며 앱이 메모리에 남아있긴 하나 코드를 실행하고있지 않은 상태입니다.
 
-
 <br>
 <br>
 
 - ### iOS 앱을 만들고, User Interface를 구성하는 데 필수적인 프레임워크 이름은 무엇인가?
-##### UIKit 이다.
+##### UIKit 입니다.
 
 <br>
 <br>
@@ -104,35 +103,37 @@
 <br>
 
 - ### TableView와 CollectionView의 차이점을 설명하시오.
-##### TableView는 리스트 형식으로 데이터를 표현하고 수직 스크롤만 가능하고 CollectionView는 그리드와 스택, 타일 등 다양한 방식으로 데이터 표현이 가능하고 수직/수평 스크롤이 모두 가능하다.
+##### TableView는 리스트 형식으로 데이터를 표현하고 수직 스크롤만 가능하고 CollectionView는 그리드와 스택, 타일 등 다양한 방식으로 데이터 표현이 가능하고 수직/수평 스크롤이 모두 가능합니다.
 
 <br>
 <br>
 
 - ### prepareForReuse에 대해서 설명하시오.
-##### 셀은 재사용 되었지만, 셀 안에 들어가는 데이터의 조건은 각각 다를 수 있다. 따라서 재사용 셀을 사용할 때에는 반드시 초기화하는 과정이 필요한데, 그때 사용하는 함수가 prepareForReuse이다.
+##### 셀은 재사용 되었지만, 셀 안에 들어가는 데이터의 조건은 각각 다를 수 있다. 따라서 재사용 셀을 사용할 때에는 반드시 초기화하는 과정이 필요한데, 그때 사용하는 함수가 prepareForReuse입니다.
 
 <br>
 <br>
 
 - ### TableView를 동작 방식과 화면에 Cell을 출력하기 위해 최소한 구현해야 하는 DataSource 메서드를 설명하시오.
+##### 섹션안에 있는 행의 개수를 지정하기위해 numberOfRowsInSection 메서드를 구현해야하고 특정 위치에 삽입할 셀의 데이터 소스를 요청하기 위해 cellForRowAt 메서드를 구현해야합니다.
 
 <br>
 <br>
 
 - ### UIWindow 객체의 역할은 무엇인가?
+##### UIWindow는 사용자 인터페이스에 배경을 제공하고, 이벤트 처리 행동을 제공합니다.
 
 <br>
 <br>
 
 - ### 모든 View Controller 객체의 상위 클래스는 무엇이고 그 역할은 무엇인가?
+##### UIViewController입니다. UIViewController는 뷰와 사용자 상호 작용에 응답하고, 뷰의 콘텐츠를 업데이트하고 인터페이스의 레이아웃을 관리합니다.
 
 <br>
 <br>
 
 - ### UIView 에서 Layer 객체는 무엇이고 어떤 역할을 담당하는지 설명하시오.
-
-
+##### UIView는 화면에 그리는 작업과 애니메이션 등의 시각적 행위를 직접 처리하지 않고 Core Animation 클래스인 CALayer에게 위임하는데, 모든 UIView는 해당 타입의 layer 프로퍼티를 가지고 있다. Layer는 그림자, 테두리, 3D변형, 마스킹, 애니메이션 등의 작업을 처리한다.
 
 
 NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오.
