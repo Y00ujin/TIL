@@ -158,6 +158,7 @@
 <br>
 
 - ### 하나의 View Controller 코드에서 여러 TableView Controller 역할을 해야 할 경우 어떻게 구분해서 구현해야 하는지 설명하시오.
+##### UITableViewCell 에서 파라미터로 받는 tableView를 객체 비교를 통해 구분하거나 테이블 뷰의 Tag를 등록, 비교해서 구분합니다.
 <br>
 <br>
 
