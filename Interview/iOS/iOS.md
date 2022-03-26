@@ -146,19 +146,64 @@
 
 
 - ### Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오.
-- ### UINavigationController 의 역할이 무엇인지 설명하시오.
-- ### 하나의 View Controller 코드에서 여러 TableView Controller 역할을 해야 할 경우 어떻게 구분해서 구현해야 하는지 설명하시오.
-- ### 자신만의 Custom View를 만들려면 어떻게 해야하는지 설명하시오.
-- ### App Bundle의 구조와 역할에 대해 설명하시오.
-- ### UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?
-- ### setNeedsLayout와 setNeedsDisplay의 차이에 대해 설명하시오.
+##### Delegate은 객체지향 프로그래밍에서 하나의 객체가 모든 일을 처리하는 것이 아니라 처리해야 할 일 중 일부를 다른 객체에 넘기는 것입니다. Delegate는 객체 간의 작업이기 때문에 참조값을 사용합니다. 따라서 retain이 된다고 할 수 있습니다.
 
+<br>
+<br>
+
+- ### UINavigationController 의 역할이 무엇인지 설명하시오.
+##### 네비게이션 스택을 이용하여 다른 뷰 컨트롤러를 관리합니다.컨텐츠 뷰 컨트롤러를 보여주고, 네비게이션 바 또는 툴바를 보여줍니다. LIFO방식으로 네비게이션바를 통해 뷰를 이동할 때 스택 구조로 쌓입니다.
+
+<br>
+<br>
+
+- ### 하나의 View Controller 코드에서 여러 TableView Controller 역할을 해야 할 경우 어떻게 구분해서 구현해야 하는지 설명하시오.
+<br>
+<br>
+
+
+- ### 자신만의 Custom View를 만들려면 어떻게 해야하는지 설명하시오.
+<br>
+<br>
+
+- ### App Bundle의 구조와 역할에 대해 설명하시오.
+<br>
+<br>
+
+- ### UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?
+<br>
+<br>
+
+- ### setNeedsLayout와 setNeedsDisplay의 차이에 대해 설명하시오.
+<br>
+<br>
 
 
 - ### NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오.
+<br>
+<br>
+
 - ### GCD API 동작 방식과 필요성에 대해 설명하시오.
+<br>
+<br>
+
 - ### Global DispatchQueue 의 Qos 에는 어떤 종류가 있는지, 각각 어떤 의미인지 설명하시오.
+<br>
+<br>
+
 - ### NotificationCenter 동작 방식과 활용 방안에 대해 설명하시오.
+<br>
+<br>
+
 - ### NSCache와 딕셔너리로 캐시를 구성했을때의 차이를 설명하시오.
+<br>
+<br>
+
 - ### URLSession에 대해서 설명하시오.
+<br>
+<br>
+
 - ### 다크모드를 지원하는 방법에 대해 설명하시오.
+<br>
+<br>
+
