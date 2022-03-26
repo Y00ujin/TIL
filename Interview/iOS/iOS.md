@@ -16,7 +16,7 @@
 <br>
 
 - ### 앱의 콘텐츠나 데이터 자체를 저장/보관하는 특별한 객체를 무엇이라고 하는가?
-##### Core Data입니다. CoreData는 모델 계층의 객체를 관리하는데 사용되는 프레임워크이자 객체의 라이프 사이클이나 영속성 관리를 위한 기능을 제공하는 객체 그래프 관리자입니다.
+##### Core Data입니다. Core Data는 객체를 관리하는데 사용되는 프레임워크이자 객체의 라이프 사이클이나 영속성 관리를 위한 기능을 제공하는 객체 그래프 관리자입니다.
 
 <br>
 <br>
@@ -55,7 +55,7 @@
 <br>
 
 - ### @Main에 대해서 설명하시오.
-##### Swift 기반으로 된 iOS 프로젝트는 main파일이 없는대신 @main을 선언하여 iOS 앱의 진입점을 컴파일러가 합성합니다. @Main을 선언해줌으로써, UIKit 앱의 진입점은 해당 클래스임을 암시합니다. Swift 5.3부터 프로그램의 entry point를 알려주는 속성이 @UIApplicationMain에서 @main으로 변경되었습니다.
+##### Swift 기반으로 된 iOS 프로젝트는 main.c파일이 없는대신 @main을 선언하여 iOS 앱의 진입점을 컴파일러가 합성합니다. @Main을 선언해줌으로써, UIKit 앱의 진입점은 해당 클래스임을 암시합니다. Swift 5.3부터 프로그램의 entry point를 알려주는 속성이 @UIApplicationMain에서 @main으로 변경되었습니다.
 
 <br>
 <br>
@@ -73,7 +73,7 @@
 <br>
 
 - ### 앱이 In-Active 상태가 되는 시나리오를 설명하시오.
-##### 특정 알림창이 화면을 덮어서 앱이 실질적으로 event를 받지 못할때 In-Active 상태가 됩니다.
+##### 특정 알림창이 화면을 덮어서 앱이 실질적으로 사용자의 event를 받지 못할때 In-Active 상태가 됩니다.
 
 <br>
 <br>
@@ -105,11 +105,11 @@
 - ### TableView와 CollectionView의 차이점을 설명하시오.
 ##### TableView는 리스트 형식으로 데이터를 표현하고 수직 스크롤만 가능하고 CollectionView는 그리드와 스택, 타일 등 다양한 방식으로 데이터 표현이 가능하고 수직/수평 스크롤이 모두 가능합니다.
 
-<br>
+<br>ㅌ
 <br>
 
 - ### prepareForReuse에 대해서 설명하시오.
-##### 셀은 재사용 되었지만, 셀 안에 들어가는 데이터의 조건은 각각 다를 수 있다. 따라서 재사용 셀을 사용할 때에는 반드시 초기화하는 과정이 필요한데, 그때 사용하는 함수가 prepareForReuse입니다.
+##### 셀은 재사용 되었지만, 셀 안에 들어가는 데이터의 조건은 각각 다를 수 있기때문에 재사용 셀을 사용할 때에는 반드시 초기화하는 과정이 필요한데, 그때 사용하는 함수가 prepareForReuse입니다.
 
 <br>
 <br>
@@ -135,19 +135,30 @@
 - ### UIView 에서 Layer 객체는 무엇이고 어떤 역할을 담당하는지 설명하시오.
 ##### UIView는 화면에 그리는 작업과 애니메이션 등의 시각적 행위를 직접 처리하지 않고 Core Animation 클래스인 CALayer에게 위임하는데, 모든 UIView는 해당 타입의 layer 프로퍼티를 가지고 있다. Layer는 그림자, 테두리, 3D변형, 마스킹, 애니메이션 등의 작업을 처리한다.
 
+<br>
+<br>
 
-NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오.
-GCD API 동작 방식과 필요성에 대해 설명하시오.
-Global DispatchQueue 의 Qos 에는 어떤 종류가 있는지, 각각 어떤 의미인지 설명하시오.
-Foundation Kit은 무엇이고 포함되어 있는 클래스들은 어떤 것이 있는지 설명하시오.
-Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오.
-NotificationCenter 동작 방식과 활용 방안에 대해 설명하시오.
-UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?
-App Bundle의 구조와 역할에 대해 설명하시오.
-자신만의 Custom View를 만들려면 어떻게 해야하는지 설명하시오.
-UINavigationController 의 역할이 무엇인지 설명하시오.
-하나의 View Controller 코드에서 여러 TableView Controller 역할을 해야 할 경우 어떻게 구분해서 구현해야 하는지 설명하시오.
-setNeedsLayout와 setNeedsDisplay의 차이에 대해 설명하시오.
-NSCache와 딕셔너리로 캐시를 구성했을때의 차이를 설명하시오.
-URLSession에 대해서 설명하시오.
-다크모드를 지원하는 방법에 대해 설명하시오.
+- ### Foundation은 무엇이고 포함되어 있는 클래스들은 어떤 것이 있는지 설명하시오.
+##### Cocoa Touch Framework에 포함된 Foundation은 String, Int, Double과 같은 원시 데이터 타입 Array, Dictionary, Set과 같은 컬렉션 타입 및 운영체제 서비스를 사용해 애플리케이션의 기본적인 기능을 관리하는 프레임워크입니다. Data Formatting이나 Filter Sorting과 같은 작업도 지원하며 파일 및 데이터 관리, 네트워킹 작업도 지원합니다.
+
+<br>
+<br>
+
+
+- ### Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오.
+- ### UINavigationController 의 역할이 무엇인지 설명하시오.
+- ### 하나의 View Controller 코드에서 여러 TableView Controller 역할을 해야 할 경우 어떻게 구분해서 구현해야 하는지 설명하시오.
+- ### 자신만의 Custom View를 만들려면 어떻게 해야하는지 설명하시오.
+- ### App Bundle의 구조와 역할에 대해 설명하시오.
+- ### UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?
+- ### setNeedsLayout와 setNeedsDisplay의 차이에 대해 설명하시오.
+
+
+
+- ### NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오.
+- ### GCD API 동작 방식과 필요성에 대해 설명하시오.
+- ### Global DispatchQueue 의 Qos 에는 어떤 종류가 있는지, 각각 어떤 의미인지 설명하시오.
+- ### NotificationCenter 동작 방식과 활용 방안에 대해 설명하시오.
+- ### NSCache와 딕셔너리로 캐시를 구성했을때의 차이를 설명하시오.
+- ### URLSession에 대해서 설명하시오.
+- ### 다크모드를 지원하는 방법에 대해 설명하시오.
