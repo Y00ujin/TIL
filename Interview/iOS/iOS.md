@@ -152,7 +152,7 @@
 <br>
 
 - ### UINavigationController 의 역할이 무엇인지 설명하시오.
-##### 네비게이션 스택을 이용하여 다른 뷰 컨트롤러를 관리합니다.컨텐츠 뷰 컨트롤러를 보여주고, 네비게이션 바 또는 툴바를 보여줍니다. LIFO방식으로 네비게이션바를 통해 뷰를 이동할 때 스택 구조로 쌓입니다.
+##### 네비게이션 스택을 이용하여 다른 뷰 컨트롤러를 관리합니다. container view controller로 계층구조로 구성된 content를 순차적으로 보여줍니다. 또 네비게이션 바 또는 툴바를 보여줄 수 있습니다. LIFO방식으로 네비게이션바를 통해 뷰를 이동할 때 스택 구조로 쌓입니다.
 
 <br>
 <br>
@@ -164,14 +164,26 @@
 
 
 - ### 자신만의 Custom View를 만들려면 어떻게 해야하는지 설명하시오.
+##### Xib를 이용하거나 코드로 작성하는 방법이 있습니다. xib 파일과 연결할 Swift파일을 생성한 후 Xib의 File's Owner에 Swift 파일을 연결하고 Custom View를 구성한 뒤 Swift파일에서 초기화를 진행한 후 사용합니다. 코드로는 UIView를 상속받는 클래스를 생성해 코드로 원하는 작업들을 설정합니다. 
 <br>
 <br>
 
 - ### App Bundle의 구조와 역할에 대해 설명하시오.
+##### 실제 앱 이름에서 .app 확장자를 뗀 MyApp 실행파일이 있다. 그리고 홈 화면이나 앱이 보여질 때 가장 먼저 보여지는 Application icons가 있다. 번들 ID, 버전 넘버, 디스플레이 네임과 같은 앱의 정보를 담고있는 info.plist파일과 앱의 initial interface를 보여주는 Launch Images와 런치타임에 앱을 로드하기 위한 기본 인터페이스 오브젝트를 포함한 MainWindow.nib파일과 Settings.bundle, Custom resource files이 있씁니다.
 <br>
 <br>
 
 - ### UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?
+##### Main Thread이다.
+
+- ### iOS의 계층구조를 설명하시오
+#####
+<br>
+<br>
+
+- ### UI 작업을 Main Thread에서 해야하는 이유를 설명하시오.
+#####
+
 <br>
 <br>
 
