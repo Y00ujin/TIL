@@ -122,38 +122,32 @@
 
 - ### UIWindow 객체의 역할은 무엇인가?
 ##### UIWindow는 사용자 인터페이스에 배경을 제공하고, 이벤트 처리 행동을 제공합니다.
-
 <br>
 <br>
 
 - ### 모든 View Controller 객체의 상위 클래스는 무엇이고 그 역할은 무엇인가?
 ##### UIViewController입니다. UIViewController는 뷰와 사용자 상호 작용에 응답하고, 뷰의 콘텐츠를 업데이트하고 인터페이스의 레이아웃을 관리합니다.
-
 <br>
 <br>
 
 - ### UIView 에서 Layer 객체는 무엇이고 어떤 역할을 담당하는지 설명하시오.
 ##### UIView는 화면에 그리는 작업과 애니메이션 등의 시각적 행위를 직접 처리하지 않고 Core Animation 클래스인 CALayer에게 위임하는데, 모든 UIView는 해당 타입의 layer 프로퍼티를 가지고 있다. Layer는 그림자, 테두리, 3D변형, 마스킹, 애니메이션 등의 작업을 처리한다.
-
 <br>
 <br>
 
 - ### Foundation은 무엇이고 포함되어 있는 클래스들은 어떤 것이 있는지 설명하시오.
 ##### Cocoa Touch Framework에 포함된 Foundation은 String, Int, Double과 같은 원시 데이터 타입 Array, Dictionary, Set과 같은 컬렉션 타입 및 운영체제 서비스를 사용해 애플리케이션의 기본적인 기능을 관리하는 프레임워크입니다. Data Formatting이나 Filter Sorting과 같은 작업도 지원하며 파일 및 데이터 관리, 네트워킹 작업도 지원합니다.
-
 <br>
 <br>
 
 
 - ### Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오.
 ##### Delegate은 객체지향 프로그래밍에서 하나의 객체가 모든 일을 처리하는 것이 아니라 처리해야 할 일 중 일부를 다른 객체에 넘기는 것입니다. Delegate는 객체 간의 작업이기 때문에 참조값을 사용합니다. 따라서 retain이 된다고 할 수 있습니다.
-
 <br>
 <br>
 
 - ### UINavigationController 의 역할이 무엇인지 설명하시오.
 ##### 네비게이션 스택을 이용하여 다른 뷰 컨트롤러를 관리합니다. container view controller로 계층구조로 구성된 content를 순차적으로 보여줍니다. 또 네비게이션 바 또는 툴바를 보여줄 수 있습니다. LIFO방식으로 네비게이션바를 통해 뷰를 이동할 때 스택 구조로 쌓입니다.
-
 <br>
 <br>
 
@@ -161,7 +155,6 @@
 ##### UITableViewCell 에서 파라미터로 받는 tableView를 객체 비교를 통해 구분하거나 테이블 뷰의 Tag를 등록, 비교해서 구분합니다.
 <br>
 <br>
-
 
 - ### 자신만의 Custom View를 만들려면 어떻게 해야하는지 설명하시오.
 ##### Xib를 이용하거나 코드로 작성하는 방법이 있습니다. xib 파일과 연결할 Swift파일을 생성한 후 Xib의 File's Owner에 Swift 파일을 연결하고 Custom View를 구성한 뒤 Swift파일에서 초기화를 진행한 후 사용합니다. 코드로는 UIView를 상속받는 클래스를 생성해 코드로 원하는 작업들을 설정합니다. 
@@ -175,56 +168,65 @@
 
 - ### UIKit 클래스들을 다룰 때 꼭 처리해야하는 애플리케이션 쓰레드 이름은 무엇인가?
 ##### Main Thread이다.
+<br>
+<br>
 
 - ### iOS의 계층구조를 설명하시오
 ##### Application, 화면의 그래픽 UI및 터치의 기능을 제공하는 Cocoa Touch 와 그래픽이나 오디오, 비디오 등 멀티미디어 기능을 제공하는 Media, GPS 나침반, 가속도 센서 등 하드웨어적 기능들이 제공되는 Core Service, 데이터 처리, 네트워크, 파일 접근등의 기능을 수행하는 Core OS로 구성되어있습니다.
-
 <br>
 <br>
 
 - ### iOS의 Thread 종류를 설명하시오.
 ##### iOS의 Thread에는 Main Thread, Global Thread가 있습니다. 먼저 Main Thread은 오직 한 개만 존재하며 개발자가 일반적으로 작성한 코드가 여기서 동작합니다. 왜냐면 작성된 코드가 Cocoa에서 실행되는데, 이 Cocoa가 코드를 Main Thread에서 호출하기 때문입니다. 또 이 Main Thread는 Main Queue에서 실행되는데 이 Main Queue는 Serial Queue입니다. Global Thread는 주로 화면에 나타나지 않는 작업을 담당한다. Global Thread는 Global Queue에서 실행되며, 이 Global Queue는 Concurrent Queue입니다.
+<br>
+<br>
 
 - ### Serial Queue와 Concurrent Queue를 설명하시오.
 ##### Serual Queue는 작업을 다른 한개의 스레드에서 처리하는 큐입니다. Concurrent는 작업을 다른 여러개의 스레드에서 처리하는 큐입니다.
+<br>
+<br>
 
 - ### Synchronous와 Asynchronous를 설명하시오.
 ##### 동기는 요청에 대한 응답이 동시에 발생해야 한다 즉, 내 작업이 끝나기 전까진 다른 작업을 수행하지 못하는 것이다. 비동기는 요청에 대한 응답이 동시에 발생하지 않는다. 즉, 내 작업이 끝나지 전에 다음 작업을 실행하는 것이다.
+<br>
+<br>
 
 - ### atomic과 nonatomic을 설명하시오.
 ##### atomic은 멀티 쓰레드 환경에서, 한 쓰레드가 프로퍼티의 값을 변경하고있을 때 다른 쓰레드들은 접근할 수 없게 Lock 기능을 제공하는 것입니다. 어떤 프로퍼티를 두 개의 스레드가 참조하고 있는 상황에서 atomic하지 않다면 값을 읽고 쓰는데 있어서 오류가 발생할 수 있습니다. 이런 경우에는 atomic하게 설정해야합니다. 이 경우는 일반적인 경우에는 고려할 필요가 없으며 성능을 저하시킬 수 있으므로 대부분 nonatomic으로 선언합니다.
-
-
 <br>
 <br>
 
 - ### Thread Safe를 설명하시오.
 ##### 멀티 스레드 프로그래밍에서 일반적으로 어떤 함수나 변수, 혹은 객체가 여러 스레드로부터 동시에 접근이 이루어져도 프로그램의 실행에 문제가 없음을 뜻합니다. 하나의 함수가 한 스레드로부터 호출되어 실행 중일 때, 다른 스레드가 그 함수를 호출하여 동시에 함께 실행되더라도 각 스레드에서의 함수의 수행 결과가 올바로 나오는 것으로 정의합니다.
-
-
-
 <br>
 <br>
 
 - ### UI 작업을 Main Thread에서 해야하는 이유를 설명하시오.
-##### 먼저 UIKit의 속성을 Thread-safe하게 설계하면, 성능저하가 발생할 수 있기 때문에 그렇게 설계할 수 없습니다. 메인 런루프가 뷰의 업데이트를 관리하는 View Drawing Cycle을 통해 뷰를 동시에 업데이트 하는데, 만약 Background Thread에서 각자의 런루프로 업데이트 하게 되었을 때, View가 제멋대로 동작할 수 있습니다. 또 iOS가 그림을 그리는 렌더링 프로세스가 있는데 여러 쓰레듣에서 각자의 뷰의 변경사항을 GPU로 보내면 GPU는 각각의 정보를 다 해석해야하니 비효율적입니다. 이러한 이유인 거 같습니다.
-
-
+##### 먼저 UIKit의 속성을 Thread-safe하게 설계하면, 성능저하가 발생할 수 있기 때문에 그렇게 설계할 수 없습니다. 런루프가 뷰의 업데이트를 관리하는 View Drawing Cycle을 통해 뷰를 동시에 업데이트 하는데, 만약 Background Thread에서 각자의 런루프로 업데이트 하게 되었을 때, View가 제멋대로 동작할 수 있습니다. 또 iOS가 그림을 그리는 렌더링 프로세스가 있는데 여러 쓰레듣에서 각자의 뷰의 변경사항을 GPU로 보내면 GPU는 각각의 정보를 다 해석해야하니 비효율적입니다.
 <br>
 <br>
 
 - ### iOS의 렌더링 프로세스를 설명하시오.
+##### CoreAnimation, Render Server, GPU, Present의 순서로 진행됩니다.
 
+- ### Run Loop를 설명하시오.
+#####
+<br>
+<br>
 
+- ### View Drawing Cycle를 설명하시오.
+#####
 <br>
 <br>
 
 - ### setNeedsLayout와 setNeedsDisplay의 차이에 대해 설명하시오.
+#####
 <br>
 <br>
 
 
 - ### NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오.
+#####
 <br>
 <br>
 
