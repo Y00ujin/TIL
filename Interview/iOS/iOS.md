@@ -177,12 +177,25 @@
 ##### Main Thread이다.
 
 - ### iOS의 계층구조를 설명하시오
-#####
+##### Application, 화면의 그래픽 UI및 터치의 기능을 제공하는 Cocoa Touch 와 그래픽이나 오디오, 비디오 등 멀티미디어 기능을 제공하는 Media, GPS 나침반, 가속도 센서 등 하드웨어적 기능들이 제공되는 Core Service, 데이터 처리, 네트워크, 파일 접근등의 기능을 수행하는 Core OS로 구성되어있습니다.
+
 <br>
 <br>
 
+- ### iOS의 Thread 종류를 설명하시오.
+##### iOS의 Thread에는 Main Thread, Global Thread가 있습니다. 먼저 Main Thread은 오직 한 개만 존재하며 개발자가 일반적으로 작성한 코드가 여기서 동작합니다. 왜냐면 작성된 코드가 Cocoa에서 실행되는데, 이 Cocoa가 코드를 Main Thread에서 호출하기 때문입니다. 또 이 Main Thread는 Main Queue에서 실행되는데 이 Main Queue는 Serial Queue입니다. Global Thread는 주로 화면에 나타나지 않는 작업을 담당한다. Global Thread는 Global Queue에서 실행되며, 이 Global Queue는 Concurrent Queue입니다.
+
+- ### Serial Queue와 Concurrent Queue를 설명하시오.
+##### Serual Queue는 작업을 다른 한개의 스레드에서 처리하는 큐입니다. Concurrent는 작업을 다른 여러개의 스레드에서 처리하는 큐입니다.
+
+- ### Synchronous와 Asynchronous를 설명하시오.
+##### 동기는 요청에 대한 응답이 동시에 발생해야 한다 즉, 내 작업이 끝나기 전까진 다른 작업을 수행하지 못하는 것이다. 비동기는 요청에 대한 응답이 동시에 발생하지 않는다. 즉, 내 작업이 끝나지 전에 다음 작업을 실행하는 것이다.
+
+- ### atomic과 nonatomic을 설명하시오.
+##### atomic은 멀티 쓰레드 환경에서, 한 쓰레드가 프로퍼티의 값을 변경하고있을 때 다른 쓰레드들은 접근할 수 없게 Lock 기능을 제공하는 것입니다. 어떤 프로퍼티를 두 개의 스레드가 참조하고 있는 상황에서 atomic하지 않다면 값을 읽고 쓰는데 있어서 오류가 발생할 수 있습니다. 이런 경우에는 atomic하게 설정해야합니다. 이 경우는 일반적인 경우에는 고려할 필요가 없으며 성능을 저하시킬 수 있으므로 대부분 nonatomic으로 선언합니다.
+
 - ### UI 작업을 Main Thread에서 해야하는 이유를 설명하시오.
-#####
+##### 
 
 <br>
 <br>
