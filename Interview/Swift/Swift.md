@@ -59,13 +59,18 @@
 <br>
 <br>
 
+- ### 함수와 메서드의 차이를 설명하시오.
+##### func 키워드로 생성하는 모든것을 함수라고 하며 func으로 선언한 함수가 클래스, 구조체, 열거형 속에 속해 포함되어 있다면 메서드라고 표현합니다.
+<br>
+<br>
+
 - ### class 메서드와 static 메서드의 차이점을 설명하시오.
-#####
+##### class 메서드와 static 모두 Type 메서드이지만 메서드 오버라이딩에 있어서 차이가 있습니다. static 메서드는 Subclass에서 해당 타입의 메서드를 오버라이딩 하는 것을 금지합니다. class는 static과 반대로 Subclass에서 해당 타입 메서드를 오버라이딩 하는 것을 허용합니다.
 <br>
 <br>
 
 - ### Delegate 패턴을 활용하는 경우를 예를 들어 설명하시오.
-#####
+##### ViewController를 보면, TableView의 특정 셀에 있는 여러 개의 버튼 중 특정 버튼을 눌렀을 겨웅에 해야할 일을 ViewController로 넘겨주기 위해 Delegate 패턴을 사용합니다. TableViewCell이 선택되어싸을 경우 호출하는 기능은 TableView Delegate에서 기본적으로 처리하고있지만, 내부의 특정 버튼에 대한 이벤트는 처리할 수 없습니다. 이와 같은 경우엔 Custom Delegate를 만들어 구현이 가능합니다.
 <br>
 <br>
 
