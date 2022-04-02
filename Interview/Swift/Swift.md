@@ -135,7 +135,7 @@
 <br>
 
 - ### property wrapper에 대해서 설명하시오.
-#####
+##### Property wrapper는 프로퍼티가 저장되는 방식을 관리하는 코드와 프로퍼티를 정의하는 코드 사이에 분리 계층을 추가합니다. 예를 들어 개발을 하다보면 Thread-safe한 프로퍼티 또는 값을 DB에 저장하는 프로퍼티가 여러 개 필요한 경우가 있습니다. 이럴 때 Thread-safe처리나 DB 커넥션 처리 등을 각각의 프로퍼티에 모두 작성해주어야 했습니다. Property wrapper를 사용하게 되면 이런 중복되는 코드들을 한 번만 작성하면 됩니다. 그 후 필요한 프로퍼티들에서 이 wrapper를 가져다 적용함으로써 하나의 코드를 재사용할 수 있게 됩니다. 
 <br>
 <br>
 
@@ -154,8 +154,13 @@
 <br>
 <br>
 
-- ### Codable에 대하여 설명하시오.
+- ### Typealias에 대해 설명하시오.
 #####
+<br>
+<br>
+
+- ### Codable에 대하여 설명하시오.
+##### Codable이라는 Typealias는 Decodable과 Encodable 프로토콜을 준수하는 타입이다.
 <br>
 <br>
 
@@ -170,10 +175,12 @@
 <br>
 
 - ### Protocol Oriented Programming과 Object Oriented Programming의 차이점을 설명하시오.
-#####
+##### 
 <br>
 <br>
 
 - ### enum / function / closure 각각 value type 인가 reference type 인가?
+##### enum은 값 타입이며 function과 closure는 참조타입입니다.
 
-- ### Array, Dictionary, Set 등등의 컬렉션 타입은 value type 인가 reference type 인가?
+- ### Array, Dictionary, Set 등의 컬렉션 타입은 value type 인가 reference type 인가?
+##### Struct로 구현되어있으므로 값 타입입니다.
