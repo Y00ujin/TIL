@@ -152,7 +152,7 @@
 <br>
 
 - ### Foundation은 무엇이고 포함되어 있는 클래스들은 어떤 것이 있는지 설명하시오.
-##### Cocoa Touch Framework에 포함된 Foundation은 String, Int, Double과 같은 원시 데이터 타입 Array, Dictionary, Set과 같은 컬렉션 타입 및 운영체제 서비스를 사용해 애플리케이션의 기본적인 기능을 관리하는 프레임워크입니다. Data Formatting이나 Filter Sorting과 같은 작업도 지원하며 파일 및 데이터 관리, 네트워킹 작업도 지원합니다.
+##### Foundation은 String, Int, Double과 같은 원시 데이터 타입 Array, Dictionary, Set과 같은 컬렉션 타입 및 운영체제 서비스를 사용해 애플리케이션의 기본적인 기능을 관리하는 프레임워크입니다. Data Formatting이나 Filter Sorting과 같은 작업도 지원하며 파일 및 데이터 관리, 네트워킹 작업도 지원합니다.
 <br>
 <br>
 
@@ -269,7 +269,7 @@
 <br>
 
 - ### URLSession에 대해서 설명하시오.
-#####
+##### URLSession은 iOS에서 제공하는 HTTP를 이용한 네트워킹을 통해 데이터를 주고받을 수 있게 도와주는 API를 제공하는 클래스입니다. URLSession은 Thread-Safty하기 때문에 어떤 스레드에서든 자유롭게 Session과 Task를 생성할 수 있습니다.
 <br>
 <br>
 
