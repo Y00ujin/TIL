@@ -1,35 +1,7 @@
 ## iOS 면접질문 정리
-
 <br>
 <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<br>
 
 - ### Bounds와 Frame의 차이점을 설명하시오.
 ##### Bounds와 Frame 둘다 CGRect 타입으로 동일하지만 Bounds는 superView즉 자신의 부모뷰를 기준으로 origin(좌표)을 나타내고, Frame은 자기 자신만의 좌표계를 기준으로 origin(좌표)를 나타냅니다.
@@ -232,49 +204,8 @@
 <br>
 <br>
 
-- ### View Drawing Cycle를 설명하시오.
-#####
-<br>
-<br>
-
-- ### setNeedsLayout와 setNeedsDisplay의 차이에 대해 설명하시오.
-#####
-<br>
-<br>
-
-
-- ### NSOperationQueue 와 GCD Queue 의 차이점을 설명하시오.
-#####
-<br>
-<br>
-
-- ### GCD API 동작 방식과 필요성에 대해 설명하시오.
-#####
-<br>
-<br>
-
-- ### Global DispatchQueue 의 Qos 에는 어떤 종류가 있는지, 각각 어떤 의미인지 설명하시오.
-#####
-<br>
-<br>
-
-- ### NotificationCenter 동작 방식과 활용 방안에 대해 설명하시오.
-#####
-<br>
-<br>
-
-- ### NSCache와 딕셔너리로 캐시를 구성했을때의 차이를 설명하시오.
-#####
-<br>
-<br>
-
 - ### URLSession에 대해서 설명하시오.
 ##### URLSession은 iOS에서 제공하는 HTTP를 이용한 네트워킹을 통해 데이터를 주고받을 수 있게 도와주는 API를 제공하는 클래스입니다. URLSession은 Thread-Safty하기 때문에 어떤 스레드에서든 자유롭게 Session과 Task를 생성할 수 있습니다.
-<br>
-<br>
-
-- ### 다크모드를 지원하는 방법에 대해 설명하시오.
-#####
 <br>
 <br>
 
@@ -307,12 +238,6 @@
 <br>
 
 
-- ### 함수형 프로그래밍이 무엇인지 설명하시오.
-##### 
-<br>
-<br>
-
-
 - ### Swift Standard Library의 map, filter, reduce, compactMap, flatMap에 대하여 설명하시오.
 ##### Map은 Sequence, Collection 프로토콜을 따르는 타입은 모두 사용할 수 있으며, 맵을 사용하면 컨테이너가 담고 있던 각각의 값을 매개변수를 통해 받은 함수에 적용한 후 다시 컨테이너에 포장하여 반환합니다. 기존의 컨테이너의 값은 변경되지 않고 새로운 컨테이너가 생성되어 반환됩니다. 기존의 for-in구문과 유사하지만 map을 사용하면 코드가 간결해지고 재사용이 용이합니다. 
 ```Swift
@@ -337,18 +262,7 @@ print(a.map{$0.uppercased()}) // ["A","B"]
 <br>
 <br>
 
-- ### MVVM, MVI, Ribs, VIP 등 자신이 알고있는 아키텍쳐를 설명하시오.
-<br>
-<br>
-
-- ### 의존성 주입에 대하여 설명하시오.
-<br>
-<br>
-
 - ### ARC 대신 Manual Reference Count 방식으로 구현할 때 꼭 사용해야 하는 메서드들을 쓰고 역할을 설명하시오.
-<br>
-<br>
-
-- ### retain 과 assign 의 차이점을 설명하시오.
+##### 인스턴스를 새로 생성하는 경우를 제외하고 RC값이 증가해야 할 때 Retain을 사용해주어야 하며 Reference count가 감소되는 시점에 Release를 사용해주어야 합니다.
 <br>
 <br>
