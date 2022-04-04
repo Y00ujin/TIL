@@ -144,18 +144,13 @@
 <br>
 <br>
 
-- ### some 키워드에 대해 설명하시오.
-#####
-<br>
-<br>
-
 - ### Result타입에 대해 설명하시오.
-#####
+##### Result타입은 Swift 5에 새롭게 추가된 에러 처리 방식으로 success와 failure 두 가지 case가 있는 enum입니다. 그중 Failure은 Error Protocol을 준수해야합니다. 기존의 throwing function은 정확히 어떤 에러 형식을 던지는지 파악하기 어려운 반면 Result Type을 활용하면 작업의 결과를 명확히 구분이 가능합니다.
 <br>
 <br>
 
-- ### Typealias에 대해 설명하시오.
-#####
+- ###  Typealias에 대해 설명하시오.
+##### Typealias는 기존에 선언되어있는 유형에 새로운 유형의 별칭을 사용함으로써 코드를 더 쉽게 읽고, 이해할 수 있도록 만드는 문법입니다. Swift에서는 typealias를 대부분의 유형에 사용할 수 있으며, 크게 내장 유형, 사용자 정의 유형, 복합 유형이 있습니다.
 <br>
 <br>
 
@@ -164,23 +159,13 @@
 <br>
 <br>
 
-- ### 멀티 쓰레드로 동작하는 앱을 작성하고 싶을 때 고려할 수 있는 방식들을 설명하시오.
-#####
-<br>
-<br>
-
-- ### MVC 구조에 대해 블록 그림을 그리고, 각 역할과 흐름을 설명하시오.
-#####
-<br>
-<br>
-
-- ### Protocol Oriented Programming과 Object Oriented Programming의 차이점을 설명하시오.
-##### 
-<br>
-<br>
 
 - ### enum / function / closure 각각 value type 인가 reference type 인가?
 ##### enum은 값 타입이며 function과 closure는 참조타입입니다.
+<br>
+<br>
 
 - ### Array, Dictionary, Set 등의 컬렉션 타입은 value type 인가 reference type 인가?
 ##### Struct로 구현되어있으므로 값 타입입니다.
+<br>
+<br>
