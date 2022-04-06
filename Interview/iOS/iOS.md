@@ -93,7 +93,7 @@
 - ### TableView와 CollectionView의 차이점을 설명하시오.
 ##### TableView는 리스트 형식으로 데이터를 표현하고 수직 스크롤만 가능하고 CollectionView는 그리드와 스택, 타일 등 다양한 방식으로 데이터 표현이 가능하고 수직/수평 스크롤이 모두 가능합니다.
 
-<br>ㅌ
+<br>
 <br>
 
 - ### prepareForReuse에 대해서 설명하시오.
@@ -102,7 +102,7 @@
 <br>
 <br>
 
-- ### TableView를 동작 방식과 화면에 Cell을 출력하기 위해 최소한 구현해야 하는 DataSource 메서드를 설명하시오.
+- ### TableView Cell을 화면에  출력하기 위해 최소한 구현해야 하는 DataSource 메서드를 설명하시오.
 ##### 섹션안에 있는 행의 개수를 지정하기위해 numberOfRowsInSection 메서드를 구현해야하고 특정 위치에 삽입할 셀의 데이터 소스를 요청하기 위해 cellForRowAt 메서드를 구현해야합니다.
 
 <br>
@@ -114,17 +114,17 @@
 <br>
 
 - ### 모든 View Controller 객체의 상위 클래스는 무엇이고 그 역할은 무엇인가?
-##### UIViewController입니다. UIViewController는 뷰와 사용자 상호 작용에 응답하고, 뷰의 콘텐츠를 업데이트하고 인터페이스의 레이아웃을 관리합니다.
+##### UIViewController입니다. UIViewController는 뷰와 사용자 상호 작용에 응답하고, 뷰의 콘텐츠를 업데이트하며 인터페이스의 레이아웃을 관리합니다.
 <br>
 <br>
 
 - ### UIView 에서 Layer 객체는 무엇이고 어떤 역할을 담당하는지 설명하시오.
-##### UIView는 시각적 행위를 직접 처리하지 않고 Core Animation 클래스인 CALayer에게 위임하는데, 모든 UIView는 해당 타입의 layer 프로퍼티를 가지고 있다. Layer는 그림자, 테두리, 3D변형, 마스킹, 애니메이션 등의 작업을 처리한다.
+##### UIView는 시각적 행위를 직접 처리하지 않고 CALayer에게 위임하는데, 모든 UIView는 layer 프로퍼티를 가지고 있습니다. 따라서 Layer를 사용하여 그림자, 테두리, 3D변형, 마스킹, 애니메이션 등의 작업을 처리할 수 있습니다.
 <br>
 <br>
 
 - ### Foundation은 무엇이고 포함되어 있는 클래스들은 어떤 것이 있는지 설명하시오.
-##### Foundation은 String, Int, Double과 같은 원시 데이터 타입 Array, Dictionary, Set과 같은 컬렉션 타입 및 운영체제 서비스를 사용해 애플리케이션의 기본적인 기능을 관리하는 프레임워크입니다. Data Formatting이나 Filter Sorting과 같은 작업도 지원하며 파일 및 데이터 관리, 네트워킹 작업도 지원합니다.
+##### Foundation은 String, Int, Double과 같은 원시 데이터 타입 Array, Dictionary, Set과 같은 컬렉션 타입을 제공하며 운영체제 서비스를 사용해 애플리케이션의 기본적인 기능을 관리하는 프레임워크입니다. Data Formatting이나 Filter, Sorting과 같은 작업도 지원하며 파일 및 데이터 관리, 네트워킹 작업도 지원합니다.
 <br>
 <br>
 
@@ -135,17 +135,17 @@
 <br>
 
 - ### UINavigationController 의 역할이 무엇인지 설명하시오.
-##### 네비게이션 스택을 이용하여 다른 뷰 컨트롤러를 관리합니다. container view controller로 계층구조로 구성된 content를 순차적으로 보여줍니다. 또 네비게이션 바 또는 툴바를 보여줄 수 있습니다. LIFO방식으로 네비게이션바를 통해 뷰를 이동할 때 스택 구조로 쌓입니다.
+##### 네비게이션 스택을 이용하여 다른 뷰 컨트롤러를 관리합니다. container view controller로 계층구조로 구성된 content를 순차적으로 보여줍니다. 또 네비게이션 바 또는 툴바를 보여줄 수 있으며 LIFO방식으로 네비게이션바를 통해 뷰를 이동할 때 스택 구조로 쌓입니다.
 <br>
 <br>
 
 - ### 하나의 View Controller 코드에서 여러 TableView Controller 역할을 해야 할 경우 어떻게 구분해서 구현해야 하는지 설명하시오.
-##### UITableViewCell 에서 파라미터로 받는 tableView를 객체 비교를 통해 구분하거나 테이블 뷰의 Tag를 등록하고 비교하여 구분합니다.
+##### 파라미터로 받는 tableView를 객체 비교를 통해 구분하거나 테이블 뷰의 Tag를 비교하여 구분합니다.
 <br>
 <br>
 
 - ### 자신만의 Custom View를 만들려면 어떻게 해야하는지 설명하시오.
-##### Xib를 이용하거나 코드로 작성하는 방법이 있습니다. xib 파일과 연결할 Swift파일을 생성한 후 Xib의 File's Owner에 Swift 파일을 연결하고 Custom View를 구성한 뒤 Swift파일에서 초기화를 진행한 후 사용합니다. 코드로는 UIView를 상속받는 클래스를 생성해 코드로 원하는 작업들을 설정합니다. 
+##### Xib를 이용하거나 코드로 작성하는 방법이 있습니다. xib 파일과 연결할 Swift파일을 생성한 후 Xib와 Swift 파일을 연결하고 Custom View를 구성한 뒤 Swift파일에서 초기화를 진행한 후 사용합니다. 코드로는 UIView를 상속받는 클래스를 생성해 코드로 원하는 작업들을 설정합니다. 
 <br>
 <br>
 
