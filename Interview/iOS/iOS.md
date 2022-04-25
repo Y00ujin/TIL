@@ -266,5 +266,3 @@ print(a.map{$0.uppercased()}) // ["A","B"]
 ##### 인스턴스를 새로 생성하는 경우를 제외하고 RC값이 증가해야 할 때 Retain을 사용해주어야 하며 Reference count가 감소되는 시점에 Release를 사용해주어야 합니다.
 <br>
 <br>
-
-ㅌ
