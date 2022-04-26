@@ -338,6 +338,9 @@
 <br>
 <br>
 
+- ### GCD에 대해 설명하세요.
+##### GCD는 멀티 코어 프로세서 시스템에 대한 응용 프로그램 지원을 최적화하기 위해 Apple에서 개발한 라이브러리이며 DispatchQueue로 작업 실행을 관리합니다. DispatchQueue는 main queue, global queue, private queue로 구분되며 main queue는 한개만 존재하며 Main thread에서 Serial하게 동작합니다. global queue는 Qos를 지정하여 작업의 우선순위를 지정할 수 있으며 Concurrent하게 동작합니다. private queue는 디폴트는 serial로 concurrent로도 설정할 수 있습니다. Qos 설정도 가능하며 global queue에서 동작합니다.
+
 - ### OperationQueue에 대해서 설명해보세요. DispatchQueue와는 어떤 것이 다른가요?
 ##### 
 <br>
@@ -354,7 +357,7 @@
 <br>
 
 - ### Property Wrapper에 대해 설명해보세요.
-##### 
+##### Property Wrapper는 반복적으로 나타나는 property 구현 패턴에 대한 집합을 컴파일러에 하드코딩하는 대신, 이러한 패턴을 라이브러리로 정의할 수 있는 일반적인 메커니즘을 제공합니다. 어떤 프로퍼티에 행하고싶은 행동을 정의하는 타입을 만들고 타임 앞에 @propertyWrapper를 붙인 후, @와 행동을 정의한 타입의 이름을 행동을 행할 프로퍼티 앞에 붙여주어 사용합니다. Property Wrapper를 사용하면 반복되는 코드를 줄일 수 있습니다.
 <br>
 <br>
 
