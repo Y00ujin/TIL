@@ -3,6 +3,14 @@
 <br>
 <br>
 
+- ### GCD API 동작 방식과 필요성에 대해 설명하시오.
+##### 
+
+
+- ### NotificationCenter 동작 방식과 활용 방안에 대해 설명하시오.
+
+##### 
+
 - ### Bounds와 Frame의 차이점을 설명하시오.
 ##### Bounds와 Frame 둘다 CGRect 타입으로 동일하지만 Bounds는 superView즉 자신의 부모뷰를 기준으로 origin(좌표)을 나타내고, Frame은 자기 자신만의 좌표계를 기준으로 origin(좌표)를 나타냅니다.
 <br>
