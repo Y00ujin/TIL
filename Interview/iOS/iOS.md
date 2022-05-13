@@ -3,13 +3,31 @@
 <br>
 <br>
 
-- ### GCD API 동작 방식과 필요성에 대해 설명하시오.
+
+- ### MVC에 대해 설명하시오.
 ##### 
+<br>
+<br>
 
-
-- ### NotificationCenter 동작 방식과 활용 방안에 대해 설명하시오.
-
+- ### MVVM에 대해 설명하시오.
 ##### 
+<br>
+<br>
+
+- ### MVP에 대해 설명하시오.
+##### 
+<br>
+<br>
+
+- ### VIPER에 대해 설명하시오.
+##### 
+<br>
+<br>
+
+- ### VIP에 대해 설명하시오.
+##### 
+<br>
+<br>
 
 - ### Bounds와 Frame의 차이점을 설명하시오.
 ##### Bounds와 Frame 둘다 CGRect 타입으로 동일하지만 Bounds는 superView즉 자신의 부모뷰를 기준으로 origin(좌표)을 나타내고, Frame은 자기 자신만의 좌표계를 기준으로 origin(좌표)를 나타냅니다.
@@ -49,7 +67,7 @@
 <br>
 
 - ### View 객체에 대해 설명하시오.
-##### View는 UIView 또는 UIView 하위 클래스의 인스턴스입니다. 이 공간에는 여러가지 요소들이 담길 수 있고, 여러 components를 보여주는 용도로도 사용됩니다. frame, bounds를 사용하여 사이즈와 위치를 지정할 수 있습니다. 또한 터치와 같은 이벤트를 처리할 수 있습니다.
+##### View는 UIView 또는 UIView 하위 클래스의 인스턴스입니다. 이 공간에는 여러가지 요소들이 담길 수 있고, frame, bounds를 사용하여 사이즈와 위치를 지정할 수 있습니다. 또한 터치와 같은 이벤트를 처리할 수 있습니다.
 <br>
 <br>
 
@@ -75,7 +93,7 @@
 <br>
 
 - ### scene delegate에 대해 설명하시오.
-##### iOS 13부터 window의 개념이 scene으로 대체되고 하나의 앱에서 여러개의 scene을 가질 수 있게 되면서 SceneDelegate가 등장하였다. SceneDelegate는 기존의 AppDelegate 역할이었던 UILifeCycle에 대한 부분을 SceneDelegate가 하게 되었으며, 화면에 무엇(scene/window)을 보여줄지 관리하는 역할을 합니다.
+##### iOS 13부터 window의 개념이 scene으로 대체되고 하나의 앱에서 여러개의 scene을 가질 수 있게 되면서 SceneDelegate가 등장하였습니다. SceneDelegate는 기존의 AppDelegate 역할이었던 UILifeCycle에 대한 부분을 SceneDelegate가 하게 되었으며, 화면에 무엇(scene/window)을 보여줄지 관리하는 역할을 합니다.
 
 <br>
 <br>
@@ -105,7 +123,7 @@
 <br>
 
 - ### prepareForReuse에 대해서 설명하시오.
-##### 셀은 재사용 되었지만, 셀 안에 들어가는 데이터의 조건은 각각 다를 수 있기때문에 재사용 셀을 사용할 때에는 반드시 초기화하는 과정이 필요한데, 그때 사용하는 함수가 prepareForReuse입니다.
+##### 셀은 재사용 되었지만, 셀 안에 들어가는 데이터의 조건은 각각 다를 수 있기때문에 재사용 셀을 사용할 때에는 반드시 초기화하는 과정이 필요하고, 그때 사용하는 함수가 prepareForReuse입니다.
 
 <br>
 <br>
@@ -126,29 +144,39 @@
 <br>
 <br>
 
+- ### clipsToBounds, masksToBounds를 설명하고 차이를 설명하시오.
+##### clipsToBounds는 UIView에 속해있으며 subview들이 view의 bounds에 가둬질 수 있는 지를 판단하는 Boolean 값입니다. 즉, true로 설정하면 subview가 view의 경계를 넘어갈 시 잘리며 false로 설정하면 경계를 넘어가도 잘리지 않게 되는 것입니다. masksToBounds는 CALayer에 속해있으며 subLayer가 view의 바깥 영역에서 그려져도 되는지를 판단하는 Boolean 값입니다. false로 설정할 시에는 superlayer 영역 이외의 subLayer도 draw 하고, true로 설정할 시에는 superlayer 영역 이외의 sublayer는 draw하지 않습니다. 
+<br>
+<br>
+
 - ### UIView 에서 Layer 객체는 무엇이고 어떤 역할을 담당하는지 설명하시오.
-##### UIView는 시각적 행위를 직접 처리하지 않고 CALayer에게 위임하는데, 모든 UIView는 layer 프로퍼티를 가지고 있습니다. 따라서 Layer를 사용하여 그림자, 테두리, 3D변형, 마스킹, 애니메이션 등의 작업을 처리할 수 있습니다.
+##### CALayer는 Core Animation에 속해있으며, UIView는 시각적 행위를 직접 처리하지 않고 CALayer에게 위임합니다. 모든 UIView는 layer 프로퍼티를 가지고 있으며 Layer를 사용하여 그림자, 테두리, 3D변형, 마스킹, 애니메이션 등의 작업을 처리할 수 있습니다.
 <br>
 <br>
 
 - ### Foundation은 무엇이고 포함되어 있는 클래스들은 어떤 것이 있는지 설명하시오.
-##### Foundation은 String, Int, Double과 같은 원시 데이터 타입 Array, Dictionary, Set과 같은 컬렉션 타입을 제공하며 운영체제 서비스를 사용해 애플리케이션의 기본적인 기능을 관리하는 프레임워크입니다. Data Formatting이나 Filter, Sorting과 같은 작업도 지원하며 파일 및 데이터 관리, 네트워킹 작업도 지원합니다.
+##### Foundation은 String, Int, Double과 같은 원시 데이터 타입과 Array, Dictionary, Set과 같은 컬렉션 타입을 제공하며 운영체제 서비스를 사용해 애플리케이션의 기본적인 기능을 관리하는 프레임워크입니다. Data Formatting이나 Filter, Sorting과 같은 작업도 지원하며 파일 및 데이터 관리, 네트워킹 작업도 지원합니다.
 <br>
 <br>
 
 
 - ### Delegate란 무언인가 설명하고, retain 되는지 안되는지 그 이유를 함께 설명하시오.
-##### Delegate은 객체지향 프로그래밍에서 하나의 객체가 모든 일을 처리하는 것이 아니라 처리해야 할 일 중 일부를 다른 객체에 넘기는 것입니다. Delegate는 객체 간의 작업이기 때문에 참조값을 사용합니다. 따라서 retain이 된다고 할 수 있습니다.
+##### Delegate은 하나의 객체가 처리해야 할 일 중 일부를 다른 객체에 넘기는 것입니다. Delegate는 객체 간의 작업이기 때문에 참조값을 사용합니다. 따라서 retain이 된다고 할 수 있습니다.
+<br>
+<br>
+
+- ### ViewController의 종류에 대해 설명하시오.
+##### 일반적으로 UIViewController를 직접 서브클래싱하여 생성하는 Content View Controller가 있습니다. 이 ViewController는 뷰 리사이징, 레이아웃 관리, 다른 객체들과 상호작용, 유저 인터랙션 처리 등의 역할을 수행합니다. Container View Controller는 다른 뷰 컨트롤러로부터 정보를 수집하거나 뷰 사이의 이동을 돕는 역할을 합니다. UIKit에서 제공하는 UITabBarController, UINavigationController, UIPageViewController 등이 모두 Container view controller입니다.
 <br>
 <br>
 
 - ### UINavigationController 의 역할이 무엇인지 설명하시오.
-##### 네비게이션 스택을 이용하여 다른 뷰 컨트롤러를 관리합니다. container view controller로 계층구조로 구성된 content를 순차적으로 보여줍니다. 또 네비게이션 바 또는 툴바를 보여줄 수 있으며 LIFO방식으로 네비게이션바를 통해 뷰를 이동할 때 스택 구조로 쌓입니다.
+##### UINaviagtionController는 Stack기반의 containerViewController이고, 1개 이상의 ViewController를 관리할 수 있습니다. Stack기반이므로 최상단에 있는 하나의 ViewController만이 보여지게 되고 ViewController를 push혹은 pop을 통해 보여질 ViewController를 결정하게 됩니다. 네비게이션 바 또는 툴바를 보여줄 수도 있습니다.
 <br>
 <br>
 
 - ### 하나의 View Controller 코드에서 여러 TableView Controller 역할을 해야 할 경우 어떻게 구분해서 구현해야 하는지 설명하시오.
-##### 파라미터로 받는 tableView를 객체 비교를 통해 구분하거나 테이블 뷰의 Tag를 비교하여 구분합니다.
+##### 파라미터로 받는 tableView를 객체 비교를 통해 구분하거나 테이블 뷰의 Tag를 설정하고 비교하여 구분합니다.
 <br>
 <br>
 
