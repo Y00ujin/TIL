@@ -64,7 +64,7 @@
 * ##### [Components](Swift/Components.md)
 * ##### [ComputedProperty](Swift/ComputedProperty.md)
 * ##### [Dictionary](Swift/Dictionary.md)
-* ##### [DiscardableResult] (Swift/DiscardableResult.md)
+* ##### [DiscardableResult](Swift/DiscardableResult.md)
 * ##### [Enum](Swift/Enum.md)
 * ##### [Equatable](Swift/Equatable.md)
 * ##### [Extension](Swift/Extension.md)
