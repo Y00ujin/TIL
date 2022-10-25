@@ -1,4 +1,13 @@
+
+# Hello Combine!
+
+<br>
+
 이 책은 Combine을 설명하고있으며, declarative, reactive 앱을 만드는 것을 목표로 합니다.
+
+<br>
+<br>
+<br>
 
 ### **Asynchronous programming**
 
@@ -9,6 +18,8 @@
 하지만 코드가 다른 코어에서 동시에 실행될 때는 코드의 어떤 부분이 먼저 수정되거나 실행될지 알 수 없습니다.
 
 비동기적으로 동시에 실행되는 코드를 실행하는 순간 변경 가능한 상태 관리는 필수적입니다.
+
+<br>
 
 ### Foundation and UIKit/AppKit
 
@@ -26,7 +37,15 @@ NotificationCenter, Delegate Pattern, GCD and Operations, Closure
 
 Combine은 비동기 코드를 설계하고 작성하기 위해 Swift 에코시스템에 공통의 고급 언어를 도입합니다.
 
+<br>
+<br>
+<br>
+
 ---
+
+<br>
+<br>
+<br>
 
 ### Combine의 장점
 
@@ -38,6 +57,8 @@ Timer나 NotificationCenter, Core Data에서는 이미 Combine을 사용하여 �
 
 RxSwift와 같은 것과 달리 서드파티가 아니라서 접근성 굿! 서드파티 의존성 낮출 수 있음
 
+<br>
+
 - **아래와 같은 것들이 Combine에 의존하고 있음**
 
 **SwiftUI :** @State, @Binding, @observedObject
@@ -46,11 +67,21 @@ RxSwift와 같은 것과 달리 서드파티가 아니라서 접근성 굿! 서�
 
 **Foundation :** Timer, NotificationCenter
 
+<br>
+
 - **Combine + SwiftUI =**  $GREAT!$
 
 SwiftUI와 함께 사용하기에 좋게 설계됨
 
+<br>
+<br>
+<br>
+
 ---
+
+<br>
+<br>
+<br>
 
 ### Swift’s Modern Concurrency
 
@@ -64,13 +95,24 @@ Swift 5.5는 비동기 및 동시성 코드를 위한 다양한 API를 도입했
 
 보다 복잡한 앱의 경우 Combine을 사용하여 개발하면 많은 이점을 얻을 수 있습니다.
 
+<br>
+
+
 ### Combine $..!$
 
 콤바인의 핵심은 **Publishers**, **Operators**, **Subscribers** 입니다. 
 
 물론 다른 것들도 많지만 이 세개 없이는 $앙~$! 대요
 
+<br>
+<br>
+<br>
+
 ---
+
+<br>
+<br>
+<br>
 
 ### Combine의 Publisher
 
@@ -84,12 +126,22 @@ Publishers는 아래와 같은 이벤트를 방출할 수 있습니다.
 - **Failure :** completion with an error
 - **Output :** value, event
 
+<br>
+
 Publisher 프로토콜은 두 가지 타입이 제네릭합니다. 
 
 - **Publisher.Output :** 이는 Publisher가 발행하는 값의 타입입니다.
 - **Publisher.Failure :** 오류가 발생한 경우 Publisher가 발생시킬 수 있는 오류 타입입니다. 만약 오류가 절대절대 발생하지 않는다면 Never 오류 타입을 사용하면 됩니다.
 
+<br>
+<br>
+<br>
+
 ---
+
+<br>
+<br>
+<br>
 
 ### Combine의 **operators**
 
@@ -105,7 +157,15 @@ Operator는 이전 Operator로부터 받은 데이터로 작업하고 체인의 
 
 즉 비동기적으로 실행되는 다른 코드는 작업 중인 데이터를 변경할 수 없습니다. 
 
+<br>
+<br>
+<br>
+
 ---
+
+<br>
+<br>
+<br>
 
 ### Combine의 **subscribers**
 
@@ -126,6 +186,9 @@ _ = just
 	  })
 ```
 
+<br>
+
+
 - **Assign  : 새로운** 값을 key path를 통해 프로퍼티에 값을 할당할 수 있습니다.
 
 Assign Subscriber는 주어진 값이 꼭 있어야 하기 때문에 Sink와는 달리 **Publisher의 Failure Type**이 **Never** 여야 합니다.
@@ -135,7 +198,15 @@ _ = publisher
     .assign(to: \.value, on: object)
 ```
 
+<br>
+<br>
+<br>
+
 ---
+
+<br>
+<br>
+<br>
 
 ### Combine의 Subscriptions
 
@@ -144,6 +215,8 @@ _ = publisher
 - subscription 프로토콜
 - subscription 프로토콜을 채택한 객체
 - publisher, operator, subscriber의 전체 chain
+
+<br>
 
 subscription의 끝에 subscriber를 추가하면 publisher를 활성화할 수 있습니다.
 
@@ -157,7 +230,15 @@ subscriber가 없으면 publisher는 어떤 value도 전달하지 않습니다.
 2. Full-Combine 이면, 앱 전체의 로직을 subscription 들로 표현 가능.
 3. Subscription이 한번 선언되고 나면 콜백을 호출할 필요 없이 시스템이 다 알아서 해줌.
 
+<br>
+<br>
+<br>
+
 ---
+
+<br>
+<br>
+<br>
 
 ### Combine을 $왜$ 사용할까?
 
@@ -173,7 +254,15 @@ Combine은 비동기 코드에 추상화를 추가하는 것을 목표로 합니
 - 시스템 레벨에 통합되어 있음
 - operator를 조합하기 좋음
 
+<br>
+<br>
+<br>
+
 ---
+
+<br>
+<br>
+<br>
 
 ## Cancellable
 
