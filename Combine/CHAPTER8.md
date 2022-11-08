@@ -318,3 +318,126 @@ isDisplayingPhotoPicker = true
 <br>
 
 앱을 실행해보면 갤러리에 접근해도 될지 물어보는 팝업창이 뜹니다. 허용을 누른 뒤 테스트해보겠습니다.
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+
+## PhotoWriter.swift
+
+이제 사용자의 콜라주를 디스크에 저장할 수 있는 기능을 추가해보겠습니다.
+
+PhotoWriter.swift 파일 내부에 아래 함수를 추가합니다.
+
+이 함수는 콜라주를 디스크에 비동기적으로 저장합니다. 그리고 Future를 반환합니다.
+
+```swift
+static func save(_ image: UIImage) -> Future<String, PhotoWriter.Error> {
+  Future { resolve in
+
+  }
+}
+```
+
+<br>
+<br>
+
+클로저 내부에 다음 코드를 삽입하여 Future 의 Logic을 구체화해봅시다.
+
+do 블록 안에서 저장 기능을 수행하고 오류가 발생할 경우 PhotoWriter.Error.generic으로 포장합니다.
+
+```swift
+do {
+
+} catch {
+  resolve(.failure(.generic(error)))
+}
+```
+
+<br>
+<br>
+
+이제 do 내부에 아래 코드를 작성합니다.
+
+PHPhotoLibrary.performChangesAndWait(_) 를 사용하여 갤러리에 접근합니다.
+
+Future의 closure는 자체로 비동기적으로 실행되므로 main thread blocking 되지 않습니다.
+
+콜백 함수를 끝내려면, 오류가 발생하고 실패한 다음 이걸 해결하는 거 or 
+
+반환값이 있는 경우 성공적으로 반환하는 경우 둘 중에 하나~~!
+
+```swift
+try PHPhotoLibrary.shared().performChangesAndWait {
+  // 1: 이미지 저장 요청을 만듭니다.
+  let request = PHAssetChangeRequest.creationRequestForAsset(from: image)
+  
+  // 2: request.placeholderForCreatedAsset?.localIdentifier를 사용하여
+  // 새로운 asset ID를 만듭니다.
+  guard let savedAssetID = 
+    request.placeholderForCreatedAsset?.localIdentifier else {
+    // 3: 만약 ID 생성에 실패하고 ID를 받지 못했으면 PhotoWriter.Error.couldNotSavePhoto
+    // 타입의 에러를 리턴합니다.
+    return resolve(.failure(.couldNotSavePhoto))
+  }
+
+  // 4: ID를 받은 경우 성공!
+  resolve(.success(savedAssetID))
+}
+```
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+## CollageNenuModel.swift - save()
+
+이제 save 함수를 사용할 수 있습니다! save() 함수 내부에 아래 코드를 작성해봅시다.
+
+앱을 실행하고 콜라주를 생성한 후 save 버튼을 누르면 사진이 저장되었다는 alert 창이 뜹니다.
+
+```swift
+guard let image = imagePreview else { return }
+
+// 1: sink를 사용해서 PhotoWriter의 save future Publisher를 구독합니다.
+PhotoWriter.save(image)
+  .sink(
+    receiveCompletion: { [unowned self] completion in
+      // 2: 오류가 발생해 완료된 경우, lastErrorMessage에 오류 메세지 저장
+      if case .failure(let error) = completion {
+        lastErrorMessage = error.localizedDescription
+      }
+      clear()
+    },
+    receiveValue: { [unowned self] id in
+      // 3: value를 받았을 경우, 새로운 asset ID lastSavedPhotoID에 저장
+      lastSavedPhotoID = id
+    }
+  )
+  .store(in: &subscriptions)
+```
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+## A note on memory management
+
+Combine의 memory 관리에 대해 이야기해보겠습니다. 
+
+앞서 언급했듯이, Combine코드는 많은 비동기 작업들을 다뤄야 하며, 이 비동기 작업들이 
+
+Class로 구성되어있을 시에는 메모리 관리가 번거롭습니다.
+
+만약 custom Combine 코드를 작성한다면 대부분 구조체를 다루기 때문에,
