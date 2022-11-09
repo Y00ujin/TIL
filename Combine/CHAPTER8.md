@@ -440,4 +440,142 @@ Combine의 memory 관리에 대해 이야기해보겠습니다.
 
 Class로 구성되어있을 시에는 메모리 관리가 번거롭습니다.
 
-만약 custom Combine 코드를 작성한다면 대부분 구조체를 다루기 때문에,
+만약 custom Combine 코드를 작성한다면 대부분 구조체를 다루기 때문에, 강한참조를 신경쓸 필요 X (?)
+
+그러나 UIKit/AppKit 코드로 UI 코드를 작성하는 경우 Class에 대해 메모리 관리를 해줘야합니다.
+
+[weak self] 또는 항상 값이 존재하는 것이 보장되는 경우 [Unown self] 등을 써서 메모리 관리를 해줘야합니다.
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+## CoollageNenuModel.swift - add()
+
+이제 구독을 공유하는 방법을 알아보겠습니다.
+
+add()함수를 다시 살펴볼까요? add 함수에서 PhotosView에서 사용자가 선택한 사진을 가지고 몇가지 작업을
+
+더 수행할 수 있습니다. 그럼 동일한 selectedPhotosSubject Publisher를 또 구독해야할까요?
+
+같은 Publisher를 구독하면 side effects가 발생할 수도 있습니다.
+
+동일한 Publisher에 대한 구독을 여러 개 만들 때 올바른 방법은 share() 연산자를 사용하여 
+
+Publisher를 공유하는 것입니다. 이렇게 하면 Publisher을 구독한 Subscriber들에게 각각 이벤트를 여러번 
+
+발행하는 것이 아니라 하나의 요소에 한번의 이벤트만을 발생시킬 수 있습니다.
+
+let newPhotos = 구문을 아래 코드로 변경해봅시다.
+
+`**let newPhotos = selectedPhotosSubject.share()**`
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+여기서 주의할 점이 있습니다! share 메서드는 Publisher를 **Publishers.Share** 타입으로 변환시킵니다.
+
+**Publishers.Share** 타입은 Publishers.Multicast 및 PassthroughSubject 게시자를
+
+암시적으로 **autoconnect()** 와 결합한 것이라고 합니다.
+
+즉, **ConnectablePublisher**가 autoconnect() 되어 publisher를 구독하는 Subscriber가 생기는 순간
+
+값을 방출하기 시작합니다.
+
+그래서 테스트해보면, cancellable2가 구독하기 전에, cancellable1이 구독하고, 구독한 즉시 값을 
+
+방출해버리기 때문에, 그대로 publisher가 끝나버립니다.
+
+```swift
+let pub = (1...3).publisher
+    //.delay(for: 1, scheduler: DispatchQueue.main)
+    .map( { _ in return Int.random(in: 0...100) } )
+    .print("Random")
+    .share()
+
+let cancellable1 = pub
+    .sink { print ("Stream 1 received: \($0)")}
+let cancellable2 = pub
+    .sink { print ("Stream 2 received: \($0)")}
+
+// Random: receive subscription: ([17, 14, 43])
+// Random: request unlimited
+// Random: receive value: (17)
+// Stream 1 received: 17
+// Random: receive value: (14)
+// Stream 1 received: 14
+// Random: receive value: (43)
+// Stream 1 received: 43
+// Random: receive finished
+```
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+그래서 publisher의 값 방출을 잠시 대기시킨 후, cncellable2까지 모두 구독할 수 있게 기다린 후 값을 방출하기
+
+위해 애플의 예제 코드에서는 delay를 사용하고있습니다. 그럼 subscriber가 동일한 값을 받을 수 있게 됩니다.
+
+```swift
+let pub = (1...3).publisher
+    .delay(for: 1, scheduler: DispatchQueue.main)
+    .map( { _ in return Int.random(in: 0...100) } )
+    .print("Random")
+    .share()
+
+let cancellable1 = pub
+    .sink { print ("Stream 1 received: \($0)")}
+let cancellable2 = pub
+    .sink { print ("Stream 2 received: \($0)")}
+
+//Random: request unlimited
+//Random: receive value: (48)
+//Stream 1 received: 48
+//Stream 2 received: 48
+//Random: receive value: (89)
+//Stream 1 received: 89
+//Stream 2 received: 89
+//Random: receive value: (68)
+//Stream 1 received: 68
+//Stream 2 received: 68
+//Random: receive finished
+```
+
+delay를 사용하는 법 대신, 새 가입자가 구독할 때 과거 값을 다시 전송하거나, 재생하는 자체 sharing operator
+
+를 생성하는 방법이 있습니다. 이는 18장 "Custom Publishers & Handling Backpression"에서 설명됩니다.
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+## **Operators in practice - CollageNeueModel.swift**
+
+images.value.count가 6보다 작은 경우만 값을 방출한다.
+
+```swift
+let newPhotos = selectedPhotosSubject
+  .prefix(while: { [unowned self] _ in
+    self.images.value.count < 6
+  })
+  .share()
+```
